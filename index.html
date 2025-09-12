@@ -59,11 +59,13 @@ src="https://www.facebook.com/tr?id=1113737447525214&ev=PageView&noscript=1"
     <h1>XOX Beer Garden – quán ăn tại Trảng Bom</h1>
     <p class="lead">Không gian xanh, sân vườn thoáng mát • Tiệc 20–120 khách • LED & âm thanh sẵn</p>
     <div class="btns">
-      <a id="cta-call" class="btn" href="tel:0975229739">Gọi 0975 229 739</a>
-      <a id="cta-menu" class="btn outline" href="assets/menu/xox-menu.pdf" target="_blank" rel="noopener">Xem MENU (PDF)</a>
-      <a class="btn outline" href="https://maps.google.com/?q=E16%20L%C3%B4%20E%20KDC%20B%C3%A0u%20X%C3%A9o%20Tr%E1%BA%A3ng%20Bom" target="_blank">Chỉ đường</a>
-    </div>
-    <p class="small" style="margin-top:10px">Địa chỉ: E16 Lô E, KDC Bàu Xéo, TT Trảng Bom (sau lưng trạm cân, đường vành đai song song QL1A)</p>
+  <a id="cta-call" class="btn" href="tel:0975229739">Gọi 0975 229 739</a>
+  <a id="cta-menu" class="btn outline" href="assets/menu/xox-menu.pdf" target="_blank" rel="noopener">Xem MENU (PDF)</a>
+  <a id="cta-route" class="btn outline" href="https://maps.app.goo.gl/iDb19t73uJBGv31VA" target="_blank" rel="noopener">Chỉ đường</a>
+</div>
+<p class="small" style="margin-top:10px">
+  Địa chỉ: E16 Lô E, KDC Bàu Xéo, TT Trảng Bom (sau lưng trạm cân, đường vành đai song song QL1A)
+</p>
   </div>
 </header>
 
@@ -94,8 +96,18 @@ src="https://www.facebook.com/tr?id=1113737447525214&ev=PageView&noscript=1"
 <footer>© 2025 XOX Beer Garden</footer>
 
 <script>
-document.getElementById('cta-call')?.addEventListener('click',()=>{ try{fbq('track','Contact')}catch(e){}; try{ttq.track('Contact')}catch(e){}; });
-document.getElementById('cta-menu')?.addEventListener('click',()=>{ try{fbq('track','ViewContent',{content_name:'Menu PDF'})}catch(e){}; try{ttq.track('ViewContent',{content_name:'Menu PDF'}))}catch(e){}; });
+document.getElementById('cta-call')?.addEventListener('click',()=>{
+  try{fbq('track','Contact')}catch(e){}; 
+  try{ttq.track('Contact')}catch(e){}; 
+});
+document.getElementById('cta-menu')?.addEventListener('click',()=>{
+  try{fbq('track','ViewContent',{content_name:'Menu PDF'})}catch(e){}; 
+  try{ttq.track('ViewContent',{content_name:'Menu PDF'})}catch(e){}; 
+});
+document.getElementById('cta-route')?.addEventListener('click',()=>{
+  try{fbq('track','Contact',{content_name:'Route'})}catch(e){}; 
+  try{ttq.track('Contact',{content_name:'Route'})}catch(e){}; 
+});
 </script>
 </body>
 </html>
