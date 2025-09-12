@@ -96,18 +96,32 @@ src="https://www.facebook.com/tr?id=1113737447525214&ev=PageView&noscript=1"
 <footer>© 2025 XOX Beer Garden</footer>
 
 <script>
-document.getElementById('cta-call')?.addEventListener('click',()=>{
-  try{fbq('track','Contact')}catch(e){}; 
-  try{ttq.track('Contact')}catch(e){}; 
-});
-document.getElementById('cta-menu')?.addEventListener('click',()=>{
-  try{fbq('track','ViewContent',{content_name:'Menu PDF'})}catch(e){}; 
-  try{ttq.track('ViewContent',{content_name:'Menu PDF'})}catch(e){}; 
-});
-document.getElementById('cta-route')?.addEventListener('click',()=>{
-  try{fbq('track','Contact',{content_name:'Route'})}catch(e){}; 
-  try{ttq.track('Contact',{content_name:'Route'})}catch(e){}; 
-});
+  // Nút gọi điện: gửi event Contact
+  document.getElementById('cta-call')?.addEventListener('click', () => {
+    try { fbq('track', 'Contact'); } catch(e){}
+    try { ttq.track('Contact'); } catch(e){}
+  });
+
+  // Nút xem menu PDF: gửi event ViewContent (đúng chuẩn)
+  document.getElementById('cta-menu')?.addEventListener('click', () => {
+    // TikTok
+    try {
+      ttq.track('ViewContent', {
+        content_id: 'menu_pdf',
+        content_type: 'service',
+        content_name: 'Menu PDF'
+      });
+    } catch(e){}
+
+    // Facebook
+    try {
+      fbq('track', 'ViewContent', {
+        content_ids: ['menu_pdf'],
+        content_type: 'product',
+        content_name: 'Menu PDF'
+      });
+    } catch(e){}
+  });
 </script>
 </body>
 </html>
