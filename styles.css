@@ -30,3 +30,28 @@ img{width:100%;height:240px;object-fit:cover;border-radius:10px}
   z-index: 9999;
 }
 .back-home:hover{ background:#2a2a2a; }
+/* Design kit: màu, layout, component */
+:root{
+  --brand:#f59f00;       /* vàng ấm */
+  --bg:#0b0f14;
+  --card:#121821;
+  --text:#e9ecef;
+  --muted:#a9b1bc;
+}
+
+.section{max-width:1100px;margin:auto;padding:28px 18px}
+.USP{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr));}
+@media (min-width:900px){.USP{grid-template-columns:repeat(4,1fr)}}
+
+.gallery-3{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.gallery-3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.gallery-3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid #22283a;border-radius:12px;padding:18px}
+
+.badge{display:inline-flex;align-items:center;gap:8px;background:#1a2230;
+  color:var(--text);border:1px solid #2a3245;border-radius:999px;padding:8px 12px;font-weight:600}
+.badge-dot{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;background:rgba(11,15,20,.9);
+  border-top:1px solid #2a3245;backdrop-filter:blur(6px);padding:10px;display:flex;gap:10px;z-index:50}
+.sticky-cta a{flex:1;text-align:center}
