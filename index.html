@@ -98,12 +98,11 @@ src="https://www.facebook.com/tr?id=1113737447525214&ev=PageView&noscript=1"
 <footer>© 2025 XOX Beer Garden</footer>
 
 <script>
-  // Nút gọi điện: gửi event Contact
-  document.getElementById('cta-call')?.addEventListener('click', () => {
-    try { fbq('track', 'Contact'); } catch(e){}
-    try { ttq.track('Contact'); } catch(e){}
-  });
-
+  // Nút xem menu: gửi event ViewContent
+document.getElementById('cta-menu')?.addEventListener('click', () => {
+  try { ttq.track('ViewContent', { content_id: 'menu_page', content_type: 'service', content_name: 'Menu Page' }); } catch(e){}
+  try { fbq('track', 'ViewContent', { content_ids: ['menu_page'], content_type: 'product', content_name: 'Menu Page' }); } catch(e){}
+});
   // Nút xem menu PDF: gửi event ViewContent (đúng chuẩn)
   document.getElementById('cta-menu')?.addEventListener('click', () => {
     // TikTok
