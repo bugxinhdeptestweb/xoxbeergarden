@@ -18,53 +18,48 @@ permalink: /menu
   <meta property="og:url" content="{{ '/menu' | absolute_url }}" />
   <meta property="og:image" content="{{ '/assets/images/og-menu.jpg' | relative_url }}" />
   <style>
-    :root{
-      --bg:#0b0f14;        /* nền đen xanh đậm */
-      --card:#10161c;      /* khối tối */
-      --ink:#e9eef2;       /* chữ sáng */
-      --muted:#93a1ad;     /* chữ mờ */
-      --accent:#ff7a1a;    /* cam thương hiệu */
-      --bd:#1c2730;        /* viền */
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Roboto,Arial,sans-serif}
-    a{color:var(--accent);text-decoration:none}
-    .wrap{max-width:1200px;margin:0 auto;padding:18px 16px}
-    header{border-bottom:1px solid var(--bd);background:linear-gradient(180deg,rgba(255,122,26,.06),rgba(255,122,26,0));position:sticky;top:0;z-index:5}
-    .brand{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .brand h1{font-size:24px;margin:0}
-    .brand .nav a{margin-left:14px;color:var(--ink);opacity:.85}
-    .brand .nav a:hover{opacity:1;color:var(--accent)}
+    /* ==== SCROLLER (KÉO NGANG) – BẢN ỔN ĐỊNH ==== */
+.scroller{position:relative}
+.rail{
+  display:flex;                 /* dùng flex cho chắc */
+  gap:14px;
+  overflow-x:auto;              /* kéo ngang */
+  scroll-snap-type:x mandatory; /* bám khung khi dừng */
+  padding:10px 6px;
+  -webkit-overflow-scrolling:touch;
+}
+.rail::-webkit-scrollbar{height:10px}
+.rail::-webkit-scrollbar-thumb{
+  background:linear-gradient(90deg,var(--bd),#202d37);
+  border-radius:8px
+}
 
-    /* Section titles */
-    h2.section{font-size:22px;margin:18px 0 8px;display:flex;align-items:center;gap:10px}
-    h2.section::before{content:'';width:6px;height:24px;background:var(--accent);border-radius:3px}
-    p.hint{color:var(--muted);margin:0 0 12px}
+/* mỗi “tile” chiếm 85% chiều rộng màn hình (mobile), lớn hơn trên desktop */
+.tile{
+  flex:0 0 85vw;                /* chiều rộng khung */
+  scroll-snap-align:center;
+  background:var(--card);
+  border:1px solid var(--bd);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(0,0,0,.25);
+}
+@media(min-width:720px){ .tile{ flex:0 0 460px } }
+@media(min-width:1080px){ .tile{ flex:0 0 520px } }
 
-    /* Scroller base */
-    .scroller{position:relative}
-    .rail{display:grid;grid-auto-flow:column;grid-auto-columns:85vw;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 6px}
-    .rail::-webkit-scrollbar{height:10px}
-    .rail::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--bd),#202d37);border-radius:8px}
-    @media(min-width:720px){ .rail{grid-auto-columns:460px} }
-    @media(min-width:1080px){ .rail{grid-auto-columns:520px} }
-    .tile{scroll-snap-align:center;background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.25)}
-    .tile img{display:block;width:100%;height:340px;object-fit:cover}
-    .cap{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;color:var(--muted);font-size:14px;border-top:1px solid var(--bd)}
+.tile img{ display:block; width:100%; height:340px; object-fit:cover }
 
-    /* Arrow buttons */
-    .ctrl{position:absolute;top:42%;transform:translateY(-50%);display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:rgba(16,22,28,.7);border:1px solid var(--bd);backdrop-filter:blur(4px);cursor:pointer}
-    .ctrl:hover{background:rgba(16,22,28,.9)}
-    .ctrl svg{width:20px;height:20px;fill:var(--ink)}
-    .prev{left:-6px}
-    .next{right:-6px}
-
-    /* Middle text block */
-    .mid{background:linear-gradient(180deg,rgba(255,122,26,.08),rgba(255,122,26,0));border:1px solid var(--bd);border-radius:16px;padding:18px}
-    .mid h3{margin:0 0 6px;color:var(--accent)}
-    .mid p{margin:6px 0;color:var(--ink)}
-
-    footer{border-top:1px solid var(--bd);color:var(--muted)}
+/* nút mũi tên */
+.ctrl{
+  position:absolute; top:42%; transform:translateY(-50%);
+  display:flex; align-items:center; justify-content:center;
+  width:42px; height:42px; border-radius:50%;
+  background:rgba(16,22,28,.7); border:1px solid var(--bd);
+  backdrop-filter:blur(4px); cursor:pointer
+}
+.ctrl:hover{ background:rgba(16,22,28,.9) }
+.ctrl svg{ width:20px; height:20px; fill:var(--ink) }
+.prev{ left:-6px } .next{ right:-6px }
   </style>
 </head>
 <body>
@@ -140,42 +135,53 @@ permalink: /menu
 
   <footer class="wrap" style="margin-top:22px">© {{ 'now' | date: '%Y' }} XOX Beer Garden • Nền đen/cam đồng bộ thương hiệu</footer>
 
-  <script>
-    // Scroll smooth bằng nút mũi tên
-    function getRail(id){ return document.getElementById(id); }
-    function scrollById(railId, amount){ const el = getRail(railId); el?.scrollBy({left:amount, behavior:'smooth'}); }
+ <script>
+  // Cuộn mượt theo kích thước khung
+  function getRail(id){ return document.getElementById(id); }
+  function scrollById(railId, amount){
+    const el = getRail(railId);
+    if(!el) return;
+    el.scrollBy({ left: amount, behavior: 'smooth' });
+  }
 
-    document.querySelectorAll('.ctrl').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const rail = btn.dataset.for;
-        const dir = btn.classList.contains('prev') ? -1 : 1;
-        // cuộn một "khung"
-        const el = getRail(rail);
-        const step = Math.round(el.clientWidth*0.9);
-        scrollById(rail, dir*step);
-      });
+  // Nút mũi tên: data-for="foodRail" / "menuRail"
+  document.querySelectorAll('.ctrl').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const railId = btn.dataset.for;
+      const el = getRail(railId);
+      if(!el) return;
+      const dir = btn.classList.contains('prev') ? -1 : 1;
+      const step = Math.round(el.clientWidth * 0.9); // cuộn gần 1 khung
+      scrollById(railId, dir * step);
     });
+  });
 
-    // Kéo để cuộn (drag-scroll)
-    function enableDragScroll(rail){
-      let isDown=false,startX,scrollLeft;
-      rail.addEventListener('mousedown', (e)=>{isDown=true;rail.classList.add('drag');startX=e.pageX-rail.offsetLeft;scrollLeft=rail.scrollLeft});
-      rail.addEventListener('mouseleave', ()=>{isDown=false;rail.classList.remove('drag')});
-      rail.addEventListener('mouseup', ()=>{isDown=false;rail.classList.remove('drag')});
-      rail.addEventListener('mousemove', (e)=>{ if(!isDown) return; e.preventDefault(); const x=e.pageX-rail.offsetLeft; const walk=(x-startX)*1.2; rail.scrollLeft=scrollLeft-walk; });
-    }
-    enableDragScroll(document.getElementById('foodRail'));
-    enableDragScroll(document.getElementById('menuRail'));
-
-    // Tải ảnh khi click
-    function downloadImg(src){ const a=document.createElement('a'); a.href=src; a.download=src.split('/').pop(); document.body.appendChild(a); a.click(); a.remove(); }
-
-    // Keyboard arrows: điều khiển phần menu (dưới)
-    window.addEventListener('keydown', (e)=>{
-      const railId = 'menuRail';
-      if(e.key==='ArrowRight') scrollById(railId, window.innerWidth*0.9);
-      if(e.key==='ArrowLeft')  scrollById(railId, -window.innerWidth*0.9);
+  // Kéo chuột để cuộn (drag)
+  function enableDragScroll(rail){
+    if(!rail) return;
+    let isDown=false, startX=0, scrollLeft=0;
+    rail.addEventListener('mousedown', e=>{
+      isDown=true; startX=e.pageX; scrollLeft=rail.scrollLeft; rail.style.cursor='grabbing';
     });
-  </script>
+    ['mouseleave','mouseup'].forEach(ev=> rail.addEventListener(ev, ()=>{
+      isDown=false; rail.style.cursor='';
+    }));
+    rail.addEventListener('mousemove', e=>{
+      if(!isDown) return;
+      e.preventDefault();
+      const walk=(e.pageX - startX)*1.2;
+      rail.scrollLeft = scrollLeft - walk;
+    });
+  }
+  enableDragScroll(document.getElementById('foodRail'));
+  enableDragScroll(document.getElementById('menuRail'));
+
+  // Phím trái/phải điều khiển phần menu (dưới)
+  window.addEventListener('keydown', (e)=>{
+    const railId = 'menuRail';
+    if(e.key==='ArrowRight') scrollById(railId, window.innerWidth*0.9);
+    if(e.key==='ArrowLeft')  scrollById(railId, -window.innerWidth*0.9);
+  });
+</script>
 </body>
 </html>
