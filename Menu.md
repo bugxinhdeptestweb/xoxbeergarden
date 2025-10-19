@@ -70,28 +70,29 @@ permalink: /menu
   </header>
 
   <main class="wrap">
-          <main class="wrap">
-    <h2 class="section">Ảnh món ăn nổi bật</h2>
-    <p class="hint">Kéo ngang để xem thêm.</p>
-        {% assign foods = site.static_files
-      | where_exp:'f','f.path contains "/assets/food/"'
-      | where_exp:'f','f.extname == ".jpg" or f.extname == ".jpeg" or f.extname == ".png" or f.extname == ".webp"'
-      | sort_natural: 'path' %}
+  <h2 class="section">Ảnh món ăn nổi bật</h2>
+  <p class="hint">Kéo ngang để xem thêm.</p>
 
-    {% assign menus = site.static_files
-      | where_exp:'f','f.path contains "/assets/menu/"'
-      | where_exp:'f','f.extname == ".jpg" or f.extname == ".jpeg" or f.extname == ".png" or f.extname == ".webp"'
-      | sort_natural: 'path' %}
-    <section class="scroller">
-      <div class="rail" id="foodRail">
-        {% for f in foods %}
-        <figure class="tile">
-          <img class="cover" src="{{ f.path | relative_url }}" alt="Món {{ forloop.index }}" loading="lazy">
-        </figure>
-        {% endfor %}
-      </div>
-    </section>
+  {% assign foods = site.static_files
+    | where_exp:'f','f.path contains "/assets/food/"'
+    | where_exp:'f','f.extname == ".jpg" or f.extname == ".jpeg" or f.extname == ".png" or f.extname == ".webp"'
+    | sort_natural: 'path' %}
 
+  {% assign menus = site.static_files
+    | where_exp:'f','f.path contains "/assets/menu/"'
+    | where_exp:'f','f.extname == ".jpg" or f.extname == ".jpeg" or f.extname == ".png" or f.extname == ".webp"'
+    | sort_natural: 'path' %}
+
+  <section class="scroller">
+    <div class="rail" id="foodRail">
+      {% for f in foods %}
+      <figure class="tile">
+        <img class="cover" src="{{ f.path | relative_url }}" alt="Món {{ forloop.index }}" loading="lazy">
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+  
     <section class="mid" style="margin:24px 0">
       <h3>Không gian & Ưu đãi</h3>
       <p>Không gian tối ấm, đèn vàng – phù hợp gia đình & nhóm bạn. Đặt tiệc sinh nhật/họp lớp (20–120 khách) – <strong>giảm 5%</strong> khi đặt trước.</p>
