@@ -1,1 +1,19 @@
+# _data/menu.yml
+# Ảnh món ăn (bạn thêm sau)
+foods: []
 
+# Danh sách các trang menu (đúng thứ tự 1 → 13)
+menus:
+  - /assets/menu/1.png
+  - /assets/menu/2.png
+  - /assets/menu/3.png
+  - /assets/menu/4.png
+  - /assets/menu/5.png
+  - /assets/menu/6.png
+  - /assets/menu/7.png
+  - /assets/menu/8.png
+  - /assets/menu/9.png
+  - /assets/menu/10.png
+  - /assets/menu/11.png
+  - /assets/menu/12.png
+  - /assets/menu/13.png
