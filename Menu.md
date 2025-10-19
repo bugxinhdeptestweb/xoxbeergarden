@@ -123,5 +123,14 @@ permalink: /menu
     enableDragScroll(document.getElementById('foodRail'));
     enableDragScroll(document.getElementById('menuRail'));
   </script>
+  {% assign foods = site.static_files
+  | where_exp:'f','f.path contains "/assets/food/"'
+  | where_exp:'f','f.extname == ".jpg" or f.extname == ".jpeg" or f.extname == ".png" or f.extname == ".webp"'
+  | sort_natural: 'path' %}
+
+{% assign menus = site.static_files
+  | where_exp:'f','f.path contains "/assets/menu/"'
+  | where_exp:'f','f.extname == ".jpg" or f.extname == ".jpeg" or f.extname == ".png" or f.extname == ".webp"'
+  | sort_natural: 'path' %}
 </body>
 </html>
