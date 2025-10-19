@@ -70,6 +70,9 @@ permalink: /menu
   </header>
 
   <main class="wrap">
+          <main class="wrap">
+    <h2 class="section">Ảnh món ăn nổi bật</h2>
+    <p class="hint">Kéo ngang để xem thêm.</p>
         {% assign foods = site.static_files
       | where_exp:'f','f.path contains "/assets/food/"'
       | where_exp:'f','f.extname == ".jpg" or f.extname == ".jpeg" or f.extname == ".png" or f.extname == ".webp"'
