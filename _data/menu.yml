@@ -1,8 +1,7 @@
 # _data/menu.yml
-# Ảnh món ăn (bạn thêm sau)
-foods: []
+# Bạn đang có 13 ảnh PNG trong assets/menu/
+foods: []   # để trống, sẽ thêm sau
 
-# Danh sách các trang menu (đúng thứ tự 1 → 13)
 menus:
   - /assets/menu/1.png
   - /assets/menu/2.png
