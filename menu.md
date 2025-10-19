@@ -79,27 +79,13 @@ permalink: /menu
     | where_exp:'f','_allow contains f.extname'
     | sort: 'path' %}
 
-  {% assign menus = site.static_files
-    | where_exp:'f','f.path contains "/assets/menu/"'
-    | where_exp:'f','_allow contains f.extname'
-    | sort: 'path' %}
-
-  <!-- dùng foods -->
-  <section class="scroller">
-    <div class="rail" id="foodRail">
-      {% for f in foods %}
-      <figure class="tile">
-        <img class="cover" src="{{ f.path | relative_url }}" alt="Món {{ forloop.index }}" loading="lazy">
-      </figure>
-      {% endfor %}
-    </div>
-  </section>
-
-  <!-- dùng menus -->
-  <h2 class="section">Menu của quán (A4 dọc)</h2>
-  <section class="scroller">
-    <div class="rail" id="menuRail">
-      {% for f in menus %}
+ {% for p in site.data.menu.menus %}
+<figure class="tile-a4">
+  <div class="frame-a4">
+    <img class="contain" src="{{ p | relative_url }}" alt="Menu trang {{ forloop.index }}" loading="lazy">
+  </div>
+</figure>
+{% endfor %}
       <figure class="tile-a4">
         <div class="frame-a4">
           <img class="contain" src="{{ f.path | relative_url }}" alt="Menu trang {{ forloop.index }}" loading="lazy">
