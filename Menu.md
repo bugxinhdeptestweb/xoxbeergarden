@@ -73,16 +73,18 @@ permalink: /menu
   <h2 class="section">Ảnh món ăn nổi bật</h2>
   <p class="hint">Kéo ngang để xem thêm.</p>
 
+  {% assign _allow = ".jpg,.jpeg,.png,.webp" %}
   {% assign foods = site.static_files
     | where_exp:'f','f.path contains "/assets/food/"'
-    | where_exp:'f','f.extname == ".jpg" or f.extname == ".jpeg" or f.extname == ".png" or f.extname == ".webp"'
-    | sort_natural: 'path' %}
+    | where_exp:'f','_allow contains f.extname'
+    | sort: 'path' %}
 
   {% assign menus = site.static_files
     | where_exp:'f','f.path contains "/assets/menu/"'
-    | where_exp:'f','f.extname == ".jpg" or f.extname == ".jpeg" or f.extname == ".png" or f.extname == ".webp"'
-    | sort_natural: 'path' %}
+    | where_exp:'f','_allow contains f.extname'
+    | sort: 'path' %}
 
+  <!-- dùng foods -->
   <section class="scroller">
     <div class="rail" id="foodRail">
       {% for f in foods %}
@@ -92,6 +94,21 @@ permalink: /menu
       {% endfor %}
     </div>
   </section>
+
+  <!-- dùng menus -->
+  <h2 class="section">Menu của quán (A4 dọc)</h2>
+  <section class="scroller">
+    <div class="rail" id="menuRail">
+      {% for f in menus %}
+      <figure class="tile-a4">
+        <div class="frame-a4">
+          <img class="contain" src="{{ f.path | relative_url }}" alt="Menu trang {{ forloop.index }}" loading="lazy">
+        </div>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+</main>
   
     <section class="mid" style="margin:24px 0">
       <h3>Không gian & Ưu đãi</h3>
