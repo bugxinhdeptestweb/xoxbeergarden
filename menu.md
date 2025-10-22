@@ -12,6 +12,13 @@ permalink: /menu
 <title>{{ page.title }}</title>
 <meta name="description" content="Menu XOX Beer Garden — nền đen/cam, kéo ngang, A4 dọc, thứ tự 1→13 theo _data/menu.yml.">
 <style>
+  /* Promo block (chữ cam) */
+.mid{background:linear-gradient(180deg,rgba(255,122,26,.08),rgba(255,122,26,0));
+  border:1px solid var(--bd); border-radius:16px; padding:18px; margin:24px 0}
+.mid h3{margin:0 0 6px; color:var(--accent)}
+.mid p{margin:6px 0; color:var(--ink)}
+.badge{display:inline-block; background:var(--accent); color:#0b0f14; 
+  font-weight:700; padding:4px 10px; border-radius:999px; margin-right:8px}
   :root{ --bg:#0b0f14; --card:#10161c; --ink:#e9eef2; --muted:#93a1ad; --accent:#ff7a1a; --bd:#1c2730; }
   html,body{margin:0}
   body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,Roboto,Arial,sans-serif}
@@ -44,6 +51,13 @@ permalink: /menu
   <main class="wrap">
     <h2 class="section">Menu của quán (A4 dọc)</h2>
     <p class="hint">Kéo ngang để xem từng trang. Thứ tự theo _data/menu.yml.</p>
+    <!-- Khối khuyến mãi / thông tin -->
+<section class="mid">
+  <h3>Ưu đãi & Thông tin</h3>
+  <p><span class="badge">-5%</span> Giảm 5% khi đặt tiệc sinh nhật/họp lớp trước.</p>
+  <p><span class="badge">Miễn phí</span> Setup sân khấu cơ bản, đèn LED & âm thanh tiêu chuẩn.</p>
+  <p>Địa chỉ: E16 Lô E, KDC Bàu Xéo, TT Trảng Bom • Hotline: <a href="tel:0975229739">0975 229 739</a></p>
+</section>
 
     <section class="scroller">
       <div class="rail" id="menuRail">
