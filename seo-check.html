@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SEO Check – XOX</title>
+<style>
+  body{font:14px system-ui, -apple-system, Segoe UI, Roboto, Arial; margin:20px; color:#0b0f14}
+  h1{margin:0 0 12px}
+  .ok{color:#0a7a0a;font-weight:600}
+  .bad{color:#b00020;font-weight:600}
+  table{border-collapse:collapse;width:100%;max-width:980px}
+  td,th{border:1px solid #e5e7eb;padding:8px 10px;text-align:left}
+  th{background:#f7f7f8}
+  code{background:#f3f4f6;padding:1px 6px;border-radius:6px}
+</style>
+</head>
+<body>
+<h1>SEO Check</h1>
+<p>Trang này tự kiểm tra title, description, canonical, H1, internal links, JSON-LD, robots/sitemap, /menu, trang sinh nhật, lazy-load ảnh.</p>
+<table id="t"><thead><tr><th>Mục</th><th>Kết quả</th><th>Ghi chú</th></tr></thead><tbody></tbody></table>
+<script>
+(async () => {
+  const out = [];
+  const PASS=(n,e="")=>out.push([n,'✅ <span class="ok">PASS</span>',e]);
+  const FAIL=(n,e="")=>out.push([n,'❌ <span class="bad">FAIL</span>',e]);
+
+  // 1) Title
+  const title=document.title||"";
+  (title.length>=20 && title.length<=65) ? PASS("Title độ dài chuẩn", title)
+    : FAIL("Title 20–65 ký tự", title||"Không có");
+
+  (/(XOX|Trảng Bom|Beer Garden|sân vườn)/i.test(title)) ? PASS("Title có brand/khu vực")
+    : FAIL("Title thiếu 'XOX' / 'Trảng Bom' / từ khoá chính");
+
+  // 2) Meta description
+  const desc=(document.querySelector('meta[name="description"]')||{}).content||"";
+  (desc.length>=50 && desc.length<=160) ? PASS("Meta description 50–160 ký tự", desc)
+    : FAIL("Meta description chưa tối ưu", desc||"Không có");
+
+  // 3) Canonical tuyệt đối
+  const can=(document.querySelector('link[rel="canonical"]')||{}).href||"";
+  (/^https?:\/\//.test(can)) ? PASS("Canonical tuyệt đối", can)
+    : FAIL("Canonical thiếu hoặc chưa tuyệt đối", can||"Không có");
+
+  // 4) H1
+  const h1=(document.querySelector('h1')||{}).innerText||"";
+  (h1 && h1.length>=10) ? PASS("Có H1 rõ ràng", h1) : FAIL("Thiếu/yếu H1", h1||"Không có");
+
+  // 5) Internal links
+  const hasMenu=!!document.querySelector('a[href*="/menu"]');
+  const hasBD = !!document.querySelector('a[href*="to-chuc-sinh-nhat"]');
+  hasMenu ? PASS("Link nội bộ tới /menu") : FAIL("Chưa link tới /menu");
+  hasBD   ? PASS("Link nội bộ tới trang sinh nhật/đặt tiệc") : FAIL("Chưa link trang sinh nhật");
+
+  // 6) CTA
+  const hasTel=!!document.querySelector('a[href^="tel:"]');
+  const hasRoute=!!document.querySelector('a[href*="google.com/maps/dir"],a[href*="maps.app.goo.gl"],a[href*="/maps/dir"]');
+  hasTel ? PASS("Có nút Gọi (tel:)") : FAIL("Thiếu nút Gọi (tel:)");
+  hasRoute ? PASS("Có nút Chỉ đường (Google Maps)") : FAIL("Thiếu nút Chỉ đường");
+
+  // 7) JSON-LD Restaurant/LocalBusiness
+  let hasLD=false;
+  document.querySelectorAll('script[type="application/ld+json"]').forEach(s=>{
+    try{
+      const j=JSON.parse(s.textContent.trim());
+      const arr=Array.isArray(j)?j:[j];
+      if(arr.some(x=>/Restaurant|LocalBusiness/i.test(x['@type']||""))) hasLD=true;
+    }catch(e){}
+  });
+  hasLD ? PASS("Có JSON-LD Restaurant/LocalBusiness") : FAIL("Thiếu JSON-LD Restaurant/LocalBusiness");
+
+  // 8) Robots meta
+  const robots=(document.querySelector('meta[name="robots"]')||{}).content||"";
+  (/noindex/i.test(robots)) ? FAIL("Đang NOINDEX ở meta robots", robots) : PASS("Không bị noindex (meta)", robots||"—");
+
+  // 9) Lazy-load ảnh
+  const imgs=[...document.images];
+  const lazy=imgs.filter(i=>(i.loading||"").toLowerCase()==="lazy").length;
+  (imgs.length===0 || lazy/imgs.length>=0.6) ? PASS("Ảnh lazy-load ≥60%", `${lazy}/${imgs.length}`)
+    : FAIL("Lazy-load ảnh chưa đủ", `${lazy}/${imgs.length}`);
+
+  // 10–12) Tài nguyên bên ngoài
+  const origin=location.origin;
+  async function ok(u){ try{ const r=await fetch(u,{method:'GET',cache:'no-store'}); return r.ok; } catch(e){ return false; } }
+  (await ok(origin+'/robots.txt')) ? PASS("robots.txt tồn tại") : FAIL("Thiếu robots.txt");
+  (await ok(origin+'/sitemap.xml')) ? PASS("sitemap.xml tồn tại") : FAIL("Thiếu sitemap.xml");
+
+  (await ok(origin+'/menu')) ? PASS("Trang /menu hoạt động") : FAIL("Trang /menu chưa mở được");
+  (await ok(origin+'/to-chuc-sinh-nhat-trang-bom.html')) ? PASS("Trang sinh nhật hoạt động")
+    : FAIL("Chưa thấy /to-chuc-sinh-nhat-trang-bom.html");
+
+  // render
+  const tb=document.querySelector('#t tbody');
+  out.forEach(r=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${r[0]}</td><td>${r[1]}</td><td>${r[2]||""}</td>`;
+    tb.appendChild(tr);
+  });
+})();
+</script>
+</body>
+</html>
