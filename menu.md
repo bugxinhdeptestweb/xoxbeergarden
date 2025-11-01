@@ -92,5 +92,9 @@ permalink: /menu
       });
     })();
   </script>
+  <p style="text-align:center;margin:24px 0;">
+  <a href="/" style="color:#ff7a1a;">🏠 Về trang chủ</a> • 
+  <a href="/to-chuc-sinh-nhat-trang-bom.html" style="color:#ff7a1a;">🎉 Trang sinh nhật</a>
+</p>
 </body>
 </html>
