@@ -1,16 +1,70 @@
-<!doctype html>
-<html lang="vi">
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="vi">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✅ SEO cơ bản -->
-  <title>XOX Beer Garden – Quán ăn Trảng Bom | Không gian sân vườn & tổ chức sinh nhật</title>
+  <!-- ✅ SEO cơ bản (giữ từ web cũ) -->
+  <title>XOX Beer Garden – Quán ăn Trảng Bom | Không gian sân vườn &amp; tổ chức sinh nhật</title>
   <meta name="description" content="Quán ăn tại Trảng Bom với không gian xanh thoáng mát. Nhận tổ chức sinh nhật 20–120 khách. Đặt trước: free setup hoặc -5%. Gọi 0975 229 739.">
-  <link rel="canonical" href="https://xoxbeergarden.id.vn/">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://xoxbeergarden.id.vn/" />
 
-  <!-- ✅ Restaurant Schema (chuẩn Google) -->
+  <!-- Open Graph (giúp share Facebook/Zalo đẹp hơn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="XOX Beer Garden – Quán ăn sân vườn tại Trảng Bom" />
+  <meta property="og:description" content="Không gian xanh mát • Tiệc 20–120 khách • Đặt trước: free setup hoặc -5%" />
+  <meta property="og:url" content="https://xoxbeergarden.id.vn/" />
+  <meta property="og:image" content="https://xoxbeergarden.id.vn/assets/img/hero.jpg" />
+
+  <!-- Font + Icons (từ template Stitch) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN (template Stitch) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "page-bg": "#120F0D",
+            "card-bg": "#1C1917",
+            "card-highlight": "#25211E",
+            "primary": "#ff7a1a",
+            "primary-hover": "#f06f12",
+            "secondary": "#1F3A2E",
+            "content": "#F2EBE3",
+            "muted": "#A8A29E",
+            "lines": "#44403C",
+            "input-bg": "#292524",
+          },
+          fontFamily: {
+            "sans": ["Plus Jakarta Sans", "sans-serif"],
+            "serif": ["Playfair Display", "serif"],
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px",
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* scrollbar + selection: giữ feel của template */
+    ::-webkit-scrollbar{width:8px}
+    ::-webkit-scrollbar-track{background:#120F0D}
+    ::-webkit-scrollbar-thumb{background:#44403C;border-radius:4px}
+    ::-webkit-scrollbar-thumb:hover{background:#ff7a1a}
+  </style>
+
+  <!-- ✅ Restaurant Schema (giữ từ web cũ, chỉ dọn format) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -33,160 +87,446 @@
   }
   </script>
 
-  <!-- ✅ Meta Pixel Code -->
+  <!-- Tracking (tuỳ chọn) - nếu bạn muốn tắt, xoá toàn bộ block này -->
+  <!-- Meta Pixel -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1113737447525214');
-  fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1113737447525214');
+    fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1113737447525214&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-
-  <!-- ✅ TikTok Pixel -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1113737447525214&ev=PageView&noscript=1"/></noscript>
+  <!-- TikTok Pixel -->
   <script>
-  !function (w,d,t) { w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
-  ttq.methods=["page","track","identify","instances","debug","on","off","once","ready"];
-  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat([].slice.call(arguments,0)))} };
-  for(var i=0;i<ttq.methods.length;i++) ttq.setAndDefer(ttq,ttq.methods[i]);
-  ttq.load=function(e){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
-  ttq._i=ttq._i||{};ttq._i[e]=[];ttq._t=ttq._t||{};ttq._t[e]=+new Date;
-  var a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=i+"?sdkid="+e+"&lib="+t;
-  var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(a,s)};
-  ttq.load('D31OU8RC77U649U910CG'); ttq.page();
-  }(window,document,'ttq');
+    !function (w,d,t) { w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+    ttq.methods=["page","track","identify","instances","debug","on","off","once","ready"]; 
+    ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat([].slice.call(arguments,0)))} };
+    for(var i=0;i<ttq.methods.length;i++) ttq.setAndDefer(ttq,ttq.methods[i]);
+    ttq.load=function(e){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
+    ttq._i=ttq._i||{};ttq._i[e]=[];ttq._t=ttq._t||{};ttq._t[e]=+new Date;
+    var a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=i+"?sdkid="+e+"&lib="+t;
+    var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(a,s)};
+    ttq.load('D31OU8RC77U649U910CG'); ttq.page();
+    }(window,document,'ttq');
   </script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
-<body>
 
-<header class="hero" style="
-  min-height:78vh;display:grid;place-items:center;padding:48px 20px;
-  background:
-    linear-gradient(to bottom, rgba(11,15,20,.4), rgba(11,15,20,.9)),
-    url('./assets/img/hero.jpg') center / cover no-repeat;
-  color:#fff;text-align:center;">
-  
-  <div class="wrap" style="max-width:820px">
-    <!-- ✅ H1 chuẩn SEO -->
-    <h1 style="margin:0 0 12px;font-size:40px;line-height:1.2;">
-      XOX Beer Garden – Quán ăn sân vườn tại Trảng Bom
-    </h1>
-    <p class="lead" style="font-size:18px;margin-bottom:24px;opacity:.95;">
-      Không gian xanh mát • Tiệc 20–120 khách • LED & âm thanh sẵn sàng
-    </p>
+<body class="bg-page-bg text-content font-sans overflow-x-hidden selection:bg-primary selection:text-white">
+  <div class="relative flex flex-col min-h-screen w-full">
 
-    <!-- ✅ CTA nổi bật hơn -->
-    <div class="btns" style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;">
-      <a id="cta-call" class="btn" href="tel:0975229739"
-         style="background:#ff7a1a;color:#fff;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;">
-         📞 Gọi 0975 229 739
+    <!-- Header -->
+    <header class="sticky top-0 z-40 w-full bg-[#120F0D]/90 backdrop-blur-md border-b border-lines shadow-lg shadow-black/20">
+      <div class="px-4 lg:px-40 flex justify-center">
+        <div class="flex items-center justify-between w-full max-w-[1280px] h-16 lg:h-20">
+          <a href="#top" class="flex items-center gap-3 lg:gap-4">
+            <div class="size-10 flex items-center justify-center rounded-full bg-secondary/30 text-primary border border-primary/20">
+              <span class="material-symbols-outlined text-2xl">yard</span>
+            </div>
+            <h2 class="text-content text-xl lg:text-2xl font-serif font-bold leading-tight tracking-wide">
+              XOX <span class="text-primary italic">Beer Garden</span>
+            </h2>
+          </a>
+
+          <nav class="hidden lg:flex flex-1 justify-end gap-8 items-center">
+            <div class="flex items-center gap-8">
+              <a class="text-content/80 text-sm font-medium hover:text-primary transition-colors tracking-wide" href="#about">Không gian</a>
+              <a class="text-content/80 text-sm font-medium hover:text-primary transition-colors tracking-wide" href="#birthday">Sinh nhật</a>
+              <a class="text-content/80 text-sm font-medium hover:text-primary transition-colors tracking-wide" href="#gallery">Hình ảnh</a>
+              <a class="text-content/80 text-sm font-medium hover:text-primary transition-colors tracking-wide" href="#contact">Liên hệ</a>
+            </div>
+            <a id="nav-menu" href="/menu" class="flex min-w-[84px] items-center justify-center rounded-full h-11 px-6 bg-primary hover:bg-primary-hover text-white text-sm font-bold transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 ring-1 ring-white/10">
+              <span class="truncate">Xem Menu</span>
+            </a>
+          </nav>
+
+          <button id="btnMobile" class="lg:hidden text-content hover:text-primary transition-colors" aria-label="Menu">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="lg:hidden hidden border-t border-lines bg-[#120F0D]/95 backdrop-blur-md">
+        <div class="px-4 py-4 flex flex-col gap-3">
+          <a class="py-2 text-content/90 hover:text-primary" href="#about">Không gian</a>
+          <a class="py-2 text-content/90 hover:text-primary" href="#birthday">Sinh nhật</a>
+          <a class="py-2 text-content/90 hover:text-primary" href="#gallery">Hình ảnh</a>
+          <a class="py-2 text-content/90 hover:text-primary" href="#contact">Liên hệ</a>
+          <a class="mt-2 inline-flex items-center justify-center rounded-full h-12 px-6 bg-primary hover:bg-primary-hover text-white font-bold" href="/menu">Xem Menu</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="top" class="relative w-full min-h-[600px] lg:min-h-[85vh] flex items-end bg-cover bg-center"
+      style='background-image:url("assets/img/hero.jpg")'>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#120F0D] via-[#120F0D]/60 to-black/30 z-0"></div>
+
+      <div class="relative z-10 w-full px-4 lg:px-40 flex justify-center pb-16 lg:pb-24">
+        <div class="flex flex-col max-w-[1280px] flex-1 items-start gap-6">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/80 border border-white/10 backdrop-blur-md shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span class="text-white text-xs font-bold uppercase tracking-widest">tiệc 20–120 khách • setup nhanh • phản hồi nhanh</span>
+          </div>
+
+          <h1 class="text-white text-4xl lg:text-7xl font-serif font-bold leading-[1.1] tracking-tight drop-shadow-lg max-w-[980px]">
+            XOX Beer Garden – Quán ăn sân vườn tại Trảng Bom
+          </h1>
+
+          <p class="text-content/90 text-lg lg:text-xl font-medium max-w-[720px] leading-relaxed flex items-center gap-2">
+            <span class="w-8 h-[1px] bg-primary"></span>
+            Không gian xanh mát • Tiệc sinh nhật • Họp lớp • Liên hoan
+          </p>
+
+          <div class="flex flex-col gap-4 mt-2 w-full sm:w-auto">
+            <div class="flex flex-wrap gap-4 w-full">
+              <a id="cta-call" href="tel:0975229739"
+                 class="group flex items-center justify-center gap-2 rounded-full h-14 px-8 bg-primary hover:bg-primary-hover text-white text-base font-bold shadow-xl shadow-primary/20 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
+                <span class="truncate">Gọi 0975 229 739</span>
+                <span class="material-symbols-outlined text-[20px]">call</span>
+              </a>
+
+              <a id="cta-menu" href="/menu"
+                 class="flex items-center justify-center gap-2 rounded-full h-14 px-8 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-base font-medium transition-all backdrop-blur-sm w-full sm:w-auto">
+                <span class="truncate">Xem MENU</span>
+                <span class="material-symbols-outlined text-[20px]">restaurant_menu</span>
+              </a>
+
+              <a id="cta-route" href="https://maps.app.goo.gl/iDb19t73uJBGv31VA" target="_blank" rel="noopener"
+                 class="flex items-center justify-center gap-2 rounded-full h-14 px-8 bg-white/10 hover:bg-white/20 border border-white/20 text-white text-base font-medium transition-all backdrop-blur-sm w-full sm:w-auto">
+                <span class="truncate">Chỉ đường</span>
+                <span class="material-symbols-outlined text-[20px]">near_me</span>
+              </a>
+            </div>
+
+            <p class="text-white/70 text-sm font-medium italic pl-2">
+              E16 Lô E, KDC Bàu Xéo, TT Trảng Bom (sau lưng trạm cân, đường vành đai song song QL1A)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Không gian (giữ nội dung cũ) -->
+    <section id="about" class="px-4 lg:px-40 py-16 flex justify-center bg-page-bg">
+      <div class="flex flex-col max-w-[1280px] flex-1 gap-10">
+        <div class="flex flex-col gap-2 text-center items-center">
+          <h2 class="text-primary font-bold tracking-[0.2em] uppercase text-xs">Không gian</h2>
+          <h3 class="text-content text-3xl lg:text-5xl font-serif font-bold">Xanh – thoáng – dễ đi nhóm đông</h3>
+          <div class="w-16 h-0.5 bg-primary mt-2"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <div class="rounded-2xl bg-card-bg border border-lines p-6 lg:p-8 shadow-lg">
+            <h4 class="text-content text-2xl font-serif font-bold mb-3">Không gian xanh – phù hợp gia đình &amp; tiệc</h4>
+            <p class="text-muted leading-relaxed">
+              Sân vườn thoáng, đèn vàng ấm; bàn dài cho nhóm 20–120 khách; trẻ nhỏ có chỗ chạy nhảy.
+              Phù hợp sinh nhật, họp lớp, liên hoan.
+            </p>
+
+            <ul class="mt-5 flex flex-col gap-2 text-sm">
+              <li class="flex items-center gap-2 text-muted"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Không gian sân vườn, ngồi thoải mái</li>
+              <li class="flex items-center gap-2 text-muted"><span class="w-1.5 h-1.5 rounded-full bgprimary"></span></li>
+            </ul>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#gallery" class="inline-flex items-center justify-center rounded-full h-11 px-6 bg-primary hover:bg-primary-hover text-white text-sm font-bold transition-all">Xem hình ảnh</a>
+              <a href="/menu" class="inline-flex items-center justify-center rounded-full h-11 px-6 bg-transparent hover:bg-primary/10 border border-primary text-primary text-sm font-bold transition-all">Xem menu</a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <img class="rounded-2xl border border-lines/60 shadow-lg object-cover w-full h-full" src="assets/img/space-1.jpg" alt="quán ăn Trảng Bom - không gian 1" loading="lazy" />
+            <img class="rounded-2xl border border-lines/60 shadow-lg object-cover w-full h-full" src="assets/img/space-2.jpg" alt="quán ăn Trảng Bom - không gian 2" loading="lazy" />
+            <img class="col-span-2 rounded-2xl border border-lines/60 shadow-lg object-cover w-full h-72" src="assets/img/space-3.jpg" alt="quán ăn Trảng Bom - không gian 3" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sinh nhật (giữ nội dung cũ) -->
+    <section id="birthday" class="px-4 lg:px-40 py-16 flex justify-center bg-card-bg border-y border-lines">
+      <div class="flex flex-col max-w-[1280px] flex-1 gap-10">
+        <div class="flex flex-col gap-2 text-center items-center">
+          <h2 class="text-primary font-bold tracking-[0.2em] uppercase text-xs">Tổ chức sinh nhật</h2>
+          <h3 class="text-content text-3xl lg:text-5xl font-serif font-bold">Ưu đãi khi đặt trước</h3>
+          <div class="w-16 h-0.5 bg-primary mt-2"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <div class="rounded-2xl bg-page-bg border border-lines p-6 lg:p-8 shadow-lg">
+            <h4 class="text-content text-2xl font-serif font-bold mb-3">Setup nhanh • Có sẵn LED &amp; âm thanh cơ bản</h4>
+            <p class="text-muted leading-relaxed">
+              Đặt trước: <b class="text-content">miễn phí setup</b> hoặc <b class="text-content">-5%</b> hóa đơn.
+              (Áp dụng theo chương trình tại quán).
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a id="cta-birthday" href="/to-chuc-sinh-nhat-trang-bom.html"
+                 class="inline-flex items-center justify-center rounded-full h-11 px-6 bg-primary hover:bg-primary-hover text-white text-sm font-bold transition-all">
+                Xem chi tiết
+              </a>
+              <a id="cta-birthday-call" href="tel:0975229739"
+                 class="inline-flex items-center justify-center rounded-full h-11 px-6 bg-transparent hover:bg-primary/10 border border-primary text-primary text-sm font-bold transition-all">
+                Gọi đặt bàn
+              </a>
+            </div>
+
+            <div class="mt-6 rounded-xl border border-lines bg-card-bg p-4">
+              <p class="text-muted text-sm">
+                Tip cho khách ngại nhắn: bạn chỉ cần gọi 1 phút để giữ bàn đẹp – sau đó quán gửi confirm qua Zalo.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <img class="rounded-2xl border border-lines/60 shadow-lg object-cover w-full h-full" src="assets/img/setup-1.jpg" alt="Tổ chức sinh nhật Trảng Bom 1" loading="lazy" />
+            <img class="rounded-2xl border border-lines/60 shadow-lg object-cover w-full h-full" src="assets/img/setup-2.jpg" alt="Tổ chức sinh nhật Trảng Bom 2" loading="lazy" />
+            <img class="col-span-2 rounded-2xl border border-lines/60 shadow-lg object-cover w-full h-72" src="assets/img/setup-3.jpg" alt="Tổ chức sinh nhật Trảng Bom 3" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu (tối giản, không bịa best-seller) -->
+    <section id="menu" class="px-4 lg:px-40 py-16 flex justify-center bg-page-bg">
+      <div class="flex flex-col max-w-[1280px] flex-1 gap-10">
+        <div class="flex flex-col gap-2 items-center text-center">
+          <h2 class="text-primary font-bold tracking-[0.2em] uppercase text-xs">Menu</h2>
+          <h3 class="text-content text-3xl lg:text-4xl font-serif font-bold">Xem menu đầy đủ trước khi đến</h3>
+          <p class="text-muted max-w-2xl">Dành cho khách ngại nhắn: xem giá &amp; món trước – tới nơi chỉ cần gọi đặt bàn.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl bg-card-bg border border-lines p-6 shadow-lg">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">restaurant_menu</span>
+              <h4 class="text-content font-bold">Menu &amp; giá</h4>
+            </div>
+            <p class="text-muted text-sm mt-2">Xem món theo nhóm: đồ nhắm, món nướng, lẩu, món chính, nước/beer.</p>
+          </div>
+          <div class="rounded-2xl bg-card-bg border border-lines p-6 shadow-lg">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">celebration</span>
+              <h4 class="text-content font-bold">Set tiệc theo ngân sách</h4>
+            </div>
+            <p class="text-muted text-sm mt-2">Bạn có thể gọi để quán gợi ý set phù hợp (nhanh, không cần nhắn dài).</p>
+          </div>
+          <div class="rounded-2xl bg-card-bg border border-lines p-6 shadow-lg">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">payments</span>
+              <h4 class="text-content font-bold">Ưu đãi đặt trước</h4>
+            </div>
+            <p class="text-muted text-sm mt-2">Chương trình ưu đãi có thể thay đổi theo thời điểm. Gọi hotline để confirm nhanh.</p>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <a id="cta-menu-full" href="/menu" class="flex items-center justify-center gap-2 rounded-full h-12 px-8 bg-transparent hover:bg-primary/10 border border-primary text-primary font-bold transition-all shadow-lg">
+            <span class="truncate">Xem Menu</span>
+            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery (dùng ảnh thật của bạn) -->
+    <section id="gallery" class="px-4 lg:px-40 py-16 flex justify-center bg-card-bg border-y border-lines">
+      <div class="flex flex-col max-w-[1280px] flex-1 gap-10">
+        <div class="flex flex-col items-center text-center">
+          <h2 class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-2">Thư viện ảnh</h2>
+          <h3 class="text-content text-3xl lg:text-4xl font-serif font-bold">Không gian &amp; tiệc tại XOX</h3>
+          <p class="text-muted mt-2 italic">Ảnh thật – khách tự tham khảo trước khi ghé quán</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-4 h-[520px] md:h-[620px]">
+          <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden relative group shadow-lg border border-lines/50">
+            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image:url("assets/img/hero.jpg")'></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"></div>
+            <div class="absolute bottom-6 left-6">
+              <span class="text-white font-serif text-xl">Góc sân vườn</span>
+            </div>
+          </div>
+
+          <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group shadow-lg border border-lines/50">
+            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image:url("assets/img/space-1.jpg")'></div>
+          </div>
+          <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group shadow-lg border border-lines/50">
+            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image:url("assets/img/space-2.jpg")'></div>
+          </div>
+
+          <div class="col-span-2 row-span-1 rounded-2xl overflow-hidden relative group shadow-lg border border-lines/50">
+            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image:url("assets/img/setup-1.jpg")'></div>
+            <div class="absolute bottom-4 left-4 bg-black/50 backdrop-blur px-3 py-1 rounded-full">
+              <span class="text-white text-xs">Setup sinh nhật</span>
+            </div>
+          </div>
+
+          <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group shadow-lg border border-lines/50">
+            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image:url("assets/img/setup-2.jpg")'></div>
+          </div>
+          <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group shadow-lg border border-lines/50">
+            <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style='background-image:url("assets/img/setup-3.jpg")'></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (giảm nhắn tin) -->
+    <section class="px-4 lg:px-40 py-16 flex justify-center bg-page-bg">
+      <div class="flex flex-col max-w-[1280px] flex-1 gap-10">
+        <div class="flex flex-col items-center text-center gap-2">
+          <h2 class="text-primary font-bold tracking-[0.2em] uppercase text-xs">FAQ</h2>
+          <h3 class="text-content text-3xl lg:text-4xl font-serif font-bold">Câu hỏi thường gặp</h3>
+          <p class="text-muted">Dành cho khách ngại nhắn — đọc nhanh là hiểu</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl bg-card-bg border border-lines p-6 shadow-lg">
+            <h4 class="text-content font-bold">Tối đa bao nhiêu khách?</h4>
+            <p class="text-muted text-sm mt-2">Nhóm tiệc phù hợp khoảng <b class="text-content">20–120 khách</b> (tuỳ ngày &amp; bố trí).</p>
+          </div>
+          <div class="rounded-2xl bg-card-bg border border-lines p-6 shadow-lg">
+            <h4 class="text-content font-bold">Đặt trước có ưu đãi gì?</h4>
+            <p class="text-muted text-sm mt-2">Đặt trước: <b class="text-content">free setup</b> hoặc <b class="text-content">-5%</b> hoá đơn (tuỳ chương trình).</p>
+          </div>
+          <div class="rounded-2xl bg-card-bg border border-lines p-6 shadow-lg">
+            <h4 class="text-content font-bold">Cách đặt bàn nhanh nhất?</h4>
+            <p class="text-muted text-sm mt-2">Bấm <b class="text-content">Gọi hotline</b> để giữ chỗ — quán confirm lại qua Zalo.</p>
+          </div>
+        </div>
+
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="tel:0975229739" class="inline-flex items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-primary-hover text-white font-bold">Gọi đặt bàn</a>
+          <a href="https://maps.app.goo.gl/iDb19t73uJBGv31VA" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-full h-12 px-8 bg-transparent hover:bg-primary/10 border border-primary text-primary font-bold">Chỉ đường</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="px-4 lg:px-40 py-20 flex justify-center bg-page-bg border-t border-lines">
+      <div class="flex flex-col lg:flex-row max-w-[1280px] flex-1 gap-12">
+
+        <div class="flex flex-1 flex-col gap-8">
+          <div class="flex flex-col gap-3">
+            <h2 class="text-content text-3xl font-serif font-bold">Liên hệ &amp; Địa điểm</h2>
+            <p class="text-muted">Ghé XOX Beer Garden để trải nghiệm không gian sân vườn tại Trảng Bom.</p>
+          </div>
+
+          <div class="flex flex-col gap-6">
+            <a class="flex items-start gap-4 p-4 rounded-xl hover:bg-card-bg transition-colors border border-transparent hover:border-lines" href="https://maps.app.goo.gl/iDb19t73uJBGv31VA" target="_blank" rel="noopener">
+              <div class="size-12 rounded-full bg-card-bg flex items-center justify-center shrink-0 text-primary border border-lines shadow-sm">
+                <span class="material-symbols-outlined">location_on</span>
+              </div>
+              <div>
+                <h3 class="text-content font-bold text-lg mb-1">Địa chỉ</h3>
+                <p class="text-muted text-sm">E16 Lô E, KDC Bàu Xéo, TT Trảng Bom, Đồng Nai</p>
+              </div>
+            </a>
+
+            <a class="flex items-start gap-4 p-4 rounded-xl hover:bg-card-bg transition-colors border border-transparent hover:border-lines" href="tel:0975229739">
+              <div class="size-12 rounded-full bg-card-bg flex items-center justify-center shrink-0 text-primary border border-lines shadow-sm">
+                <span class="material-symbols-outlined">call</span>
+              </div>
+              <div>
+                <h3 class="text-content font-bold text-lg mb-1">Hotline / Zalo</h3>
+                <p class="text-muted text-sm"><span class="text-primary font-bold">0975 229 739</span></p>
+              </div>
+            </a>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl border border-transparent">
+              <div class="size-12 rounded-full bg-card-bg flex items-center justify-center shrink-0 text-primary border border-lines shadow-sm">
+                <span class="material-symbols-outlined">schedule</span>
+              </div>
+              <div>
+                <h3 class="text-content font-bold text-lg mb-1">Giờ mở cửa</h3>
+                <p class="text-muted text-sm">16:30 - 23:30 (Hàng ngày)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-1 w-full min-h-[400px] rounded-2xl overflow-hidden border border-lines bg-page-bg relative shadow-lg">
+          <iframe
+            title="Bản đồ XOX Beer Garden"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full"
+            src="https://www.google.com/maps?q=E16%20L%C3%B4%20E%2C%20KDC%20B%C3%A0u%20X%C3%A9o%2C%20TT%20Tr%E1%BA%A3ng%20Bom&output=embed">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-lines bg-[#0a0908] py-12 px-4 lg:px-40">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-[1280px] mx-auto">
+        <div class="flex flex-col gap-2 items-center md:items-start">
+          <h2 class="text-white text-2xl font-serif font-bold tracking-wider">XOX <span class="text-primary italic">Beer Garden</span></h2>
+          <p class="text-muted text-sm">© 2025 XOX Beer Garden</p>
+        </div>
+        <div class="flex gap-6 flex-wrap justify-center">
+          <a class="text-muted hover:text-primary transition-colors" href="/menu">Menu</a>
+          <a class="text-muted hover:text-primary transition-colors" href="/to-chuc-sinh-nhat-trang-bom.html">Tổ chức sinh nhật</a>
+          <a class="text-muted hover:text-primary transition-colors" href="https://maps.app.goo.gl/iDb19t73uJBGv31VA" target="_blank" rel="noopener">Google Maps</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile bottom bar -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 flex h-16 bg-card-bg border-t border-lines lg:hidden safe-area-bottom pb-1 shadow-[0_-4px_20px_-1px_rgba(0,0,0,0.5)]">
+      <a id="m-call" class="flex-1 flex flex-col items-center justify-center gap-1 text-content active:text-primary active:bg-page-bg transition-colors" href="tel:0975229739">
+        <span class="material-symbols-outlined text-primary">call</span>
+        <span class="text-[10px] font-bold uppercase">Gọi ngay</span>
       </a>
-      <a id="cta-menu" class="btn outline" href="/menu"
-         style="border:2px solid #ff7a1a;color:#ff7a1a;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;">
-         📋 Xem MENU
+      <a id="m-zalo" class="flex-1 flex flex-col items-center justify-center gap-1 text-content active:text-primary active:bg-page-bg border-l border-r border-lines transition-colors" href="https://zalo.me/0975229739" target="_blank" rel="noopener">
+        <span class="material-symbols-outlined text-blue-500">chat</span>
+        <span class="text-[10px] font-bold uppercase">Zalo</span>
       </a>
-      <a id="cta-route" class="btn outline"
-         href="https://maps.app.goo.gl/iDb19t73uJBGv31VA" target="_blank" rel="noopener"
-         style="border:2px solid #ff7a1a1;color:#ff7a1a;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;">
-         🗺️ Chỉ đường
+      <a id="m-menu" class="flex-1 flex flex-col items-center justify-center gap-1 text-content active:text-primary active:bg-page-bg transition-colors" href="/menu">
+        <span class="material-symbols-outlined text-primary">restaurant_menu</span>
+        <span class="text-[10px] font-bold uppercase">Menu</span>
       </a>
     </div>
+    <div class="h-16 lg:hidden"></div>
 
-    <!-- ✅ Địa chỉ rõ ràng -->
-    <p class="small" style="margin-top:16px;font-size:15px;opacity:.85;">
-      E16 Lô E, KDC Bàu Xéo, TT Trảng Bom (sau lưng trạm cân, đường vành đai song song QL1A)
-    </p>
   </div>
 
-  <!-- ✅ Tracking Pixel (optional) -->
   <script>
-    document.getElementById('cta-call')?.addEventListener('click',()=>{
-      try{fbq('track','Contact');}catch(e){}
-      try{ttq.track('Contact');}catch(e){}
-    });
-    document.getElementById('cta-menu')?.addEventListener('click',()=>{
-      try{fbq('track','ViewContent',{content_name:'Menu'});}catch(e){}
-      try{ttq.track('ViewContent',{content_name:'Menu'});}catch(e){}
-    });
-    document.getElementById('cta-route')?.addEventListener('click',()=>{
-      try{fbq('track','Lead');}catch(e){}
-      try{ttq.track('ClickButton',{button_name:'Route'});}catch(e){}
-    });
+    // Mobile menu toggle
+    (function(){
+      const btn = document.getElementById('btnMobile');
+      const panel = document.getElementById('mobileMenu');
+      btn?.addEventListener('click', () => panel.classList.toggle('hidden'));
+      panel?.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', () => panel.classList.add('hidden')));
+    })();
+
+    // CTA tracking (không bắn trùng; fail-safe nếu bạn tắt pixel)
+    (function () {
+      const safe = (fn) => { try { fn(); } catch(e) {} };
+      const on = (id, cb) => document.getElementById(id)?.addEventListener('click', cb);
+
+      on('cta-call', () => { safe(() => fbq('track', 'Contact')); safe(() => ttq.track('Contact')); });
+      on('m-call',   () => { safe(() => fbq('track', 'Contact')); safe(() => ttq.track('Contact')); });
+
+      on('cta-menu', () => {
+        safe(() => fbq('track', 'ViewContent', { content_name: 'Menu Page', content_ids: ['menu_page'], content_type: 'service' }));
+        safe(() => ttq.track('ViewContent', { content_id: 'menu_page', content_type: 'service', content_name: 'Menu Page' }));
+      });
+      on('m-menu', () => {
+        safe(() => fbq('track', 'ViewContent', { content_name: 'Menu Page', content_ids: ['menu_page'], content_type: 'service' }));
+        safe(() => ttq.track('ViewContent', { content_id: 'menu_page', content_type: 'service', content_name: 'Menu Page' }));
+      });
+
+      on('cta-route', () => { safe(() => fbq('track', 'Lead')); safe(() => ttq.track('ClickButton', { button_name: 'Route' })); });
+    })();
   </script>
-</header>
-  
-<main class="wrap">
-  <section class="card">
-  <h2>Không gian xanh – phù hợp gia đình & tiệc</h2>
-  <p>Sân vườn thoáng, đèn vàng ấm; bàn dài cho nhóm 20–120 khách; trẻ nhỏ có chỗ chạy nhảy. Phù hợp sinh nhật, họp lớp, liên hoan.</p>
-
-  <div class="grid grid-3">
-    <img src="assets/img/space-1.jpg" alt="quán ăn Trảng Bom - không gian 1">
-    <img src="assets/img/space-2.jpg" alt="quán ăn Trảng Bom - không gian 2">
-    <img src="assets/img/space-3.jpg" alt="quán ăn Trảng Bom - không gian 3">
-  </div>
-</section>
-
-  <section class="card">
-    <h2>Tổ chức sinh nhật – ưu đãi đặt trước</h2>
-    <p>Đặt trước: <b>miễn phí setup</b> hoặc <b>-5%</b> hóa đơn. LED & âm thanh cơ bản sẵn sàng.</p>
-    <div class="grid">
-      <img src="assets/img/setup-1.jpg" alt="Tổ chức sinh nhật Trảng Bom 1">
-      <img src="assets/img/setup-2.jpg" alt="Tổ chức sinh nhật Trảng Bom 2">
-      <img src="assets/img/setup-3.jpg" alt="Tổ chức sinh nhật Trảng Bom 3">
-    </div>
-    <p><a class="btn" href="to-chuc-sinh-nhat-trang-bom.html">Xem chi tiết</a></p>
-  </section>
-</main>
-
-<footer>© 2025 XOX Beer Garden</footer>
-  <nav style="text-align:center;margin-top:30px;">
-  <a href="/menu" style="margin:0 12px;color:#ff7a1a;font-weight:600;text-decoration:none;">📋 Xem menu</a>
-  <a href="/to-chuc-sinh-nhat-trang-bom.html" style="margin:0 12px;color:#ff7a1a;font-weight:600;text-decoration:none;">🎉 Tổ chức sinh nhật</a>
-</nav>
-
-<script>
-  // Nút xem menu: gửi event ViewContent
-document.getElementById('cta-menu')?.addEventListener('click', () => {
-  try { ttq.track('ViewContent', { content_id: 'menu_page', content_type: 'service', content_name: 'Menu Page' }); } catch(e){}
-  try { fbq('track', 'ViewContent', { content_ids: ['menu_page'], content_type: 'product', content_name: 'Menu Page' }); } catch(e){}
-});
-  // Nút xem menu PDF: gửi event ViewContent (đúng chuẩn)
-  document.getElementById('cta-menu')?.addEventListener('click', () => {
-    // TikTok
-    try {
-      ttq.track('ViewContent', {
-        content_id: 'menu_pdf',
-        content_type: 'service',
-        content_name: 'Menu PDF'
-      });
-    } catch(e){}
-
-    // Facebook
-    try {
-      fbq('track', 'ViewContent', {
-        content_ids: ['menu_pdf'],
-        content_type: 'product',
-        content_name: 'Menu PDF'
-      });
-    } catch(e){}
-  });
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 650,
-    once: true,
-    offset: 60
-  });
-</script>
 </body>
 </html>
