@@ -1,192 +1,183 @@
-<!doctype html>
-<html lang="vi">
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <!-- ✅ SEO cơ bản -->
-  <title>XOX Beer Garden – Quán ăn Trảng Bom | Không gian sân vườn & tổ chức sinh nhật</title>
-  <meta name="description" content="Quán ăn tại Trảng Bom với không gian xanh thoáng mát. Nhận tổ chức sinh nhật 20–120 khách. Đặt trước: free setup hoặc -5%. Gọi 0975 229 739.">
-  <link rel="canonical" href="https://xoxbeergarden.id.vn/">
-  <link rel="stylesheet" href="styles.css">
+<!-- SEO -->
+<title>XOX Beer Garden – Quán ăn Trảng Bom | Không gian sân vườn & tổ chức sinh nhật</title>
+<meta name="description" content="Quán ăn tại Trảng Bom với không gian xanh thoáng mát. Nhận tổ chức sinh nhật 20–120 khách. Đặt trước miễn phí setup hoặc giảm 5%. Gọi 0975 229 739.">
+<link rel="canonical" href="https://xoxbeergarden.id.vn/">
 
-  <!-- ✅ Restaurant Schema (chuẩn Google) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "XOX Beer Garden – Trảng Bom",
-    "url": "https://xoxbeergarden.id.vn/",
-    "menu": "https://xoxbeergarden.id.vn/menu",
-    "telephone": "+84975229739",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "E16 Lô E, KDC Bàu Xéo, TT Trảng Bom",
-      "addressLocality": "Trảng Bom",
-      "addressRegion": "Đồng Nai",
-      "addressCountry": "VN"
-    },
-    "servesCuisine": ["Vietnamese", "BBQ", "Beer Garden"],
-    "priceRange": "$$",
-    "openingHours": "Mo-Su 16:30-23:30",
-    "sameAs": ["https://maps.app.goo.gl/iDb19t73uJBGv31VA"]
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        page: "#120F0D",
+        card: "#1C1917",
+        primary: "#B86B4B",
+        primaryHover: "#A65D3D",
+        content: "#F2EBE3",
+        muted: "#A8A29E",
+        border: "#44403C"
+      },
+      fontFamily: {
+        sans: ["Plus Jakarta Sans","sans-serif"],
+        serif: ["Playfair Display","serif"]
+      }
+    }
   }
-  </script>
+}
+</script>
 
-  <!-- ✅ Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1113737447525214');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1113737447525214&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "XOX Beer Garden – Trảng Bom",
+  "url": "https://xoxbeergarden.id.vn/",
+  "telephone": "+84975229739",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "E16 Lô E, KDC Bàu Xéo",
+    "addressLocality": "Trảng Bom",
+    "addressRegion": "Đồng Nai",
+    "addressCountry": "VN"
+  },
+  "servesCuisine": ["Vietnamese","BBQ","Beer Garden"],
+  "priceRange": "$$",
+  "openingHours": "Mo-Su 16:30-23:30"
+}
+</script>
 
-  <!-- ✅ TikTok Pixel -->
-  <script>
-  !function (w,d,t) { w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
-  ttq.methods=["page","track","identify","instances","debug","on","off","once","ready"];
-  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat([].slice.call(arguments,0)))} };
-  for(var i=0;i<ttq.methods.length;i++) ttq.setAndDefer(ttq,ttq.methods[i]);
-  ttq.load=function(e){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
-  ttq._i=ttq._i||{};ttq._i[e]=[];ttq._t=ttq._t||{};ttq._t[e]=+new Date;
-  var a=d.createElement("script");a.type="text/javascript";a.async=!0;a.src=i+"?sdkid="+e+"&lib="+t;
-  var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(a,s)};
-  ttq.load('D31OU8RC77U649U910CG'); ttq.page();
-  }(window,document,'ttq');
-  </script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
+n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1113737447525214');
+fbq('track','PageView');
+</script>
+
+<!-- TikTok Pixel -->
+<script>
+!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];
+ttq.methods=["page","track"];ttq.setAndDefer=function(t,e){
+t[e]=function(){t.push([e].concat([].slice.call(arguments,0)))}}; 
+ttq.load=function(e){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
+var s=d.createElement("script");s.async=!0;s.src=i+"?sdkid="+e;
+var x=d.getElementsByTagName("script")[0];x.parentNode.insertBefore(s,x)};
+ttq.load('D31OU8RC77U649U910CG');ttq.page();
+}(window,document,'ttq');
+</script>
 </head>
-<body>
 
-<header class="hero" style="
-  min-height:78vh;display:grid;place-items:center;padding:48px 20px;
-  background:
-    linear-gradient(to bottom, rgba(11,15,20,.4), rgba(11,15,20,.9)),
-    url('./assets/img/hero.jpg') center / cover no-repeat;
-  color:#fff;text-align:center;">
-  
-  <div class="wrap" style="max-width:820px">
-    <!-- ✅ H1 chuẩn SEO -->
-    <h1 style="margin:0 0 12px;font-size:40px;line-height:1.2;">
-      XOX Beer Garden – Quán ăn sân vườn tại Trảng Bom
+<body class="bg-page text-content font-sans">
+
+<!-- HERO -->
+<section class="relative min-h-[85vh] flex items-end bg-cover bg-center"
+style="background-image:url('./assets/img/hero.jpg')">
+<div class="absolute inset-0 bg-gradient-to-t from-page via-page/70 to-black/30"></div>
+
+<div class="relative z-10 w-full px-6 lg:px-40 pb-24">
+  <div class="max-w-3xl space-y-6">
+    <h1 class="font-serif text-4xl lg:text-6xl font-bold">
+      XOX Beer Garden <br>
+      <span class="italic text-primary">Quán ăn sân vườn Trảng Bom</span>
     </h1>
-    <p class="lead" style="font-size:18px;margin-bottom:24px;opacity:.95;">
+
+    <p class="text-lg opacity-90">
       Không gian xanh mát • Tiệc 20–120 khách • LED & âm thanh sẵn sàng
     </p>
 
-    <!-- ✅ CTA nổi bật hơn -->
-    <div class="btns" style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;">
-      <a id="cta-call" class="btn" href="tel:0975229739"
-         style="background:#ff7a1a;color:#fff;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;">
-         📞 Gọi 0975 229 739
+    <div class="flex flex-wrap gap-4">
+      <a href="tel:0975229739"
+        class="px-8 py-4 rounded-full bg-primary hover:bg-primaryHover font-bold text-white">
+        📞 Gọi 0975 229 739
       </a>
-      <a id="cta-menu" class="btn outline" href="/menu"
-         style="border:2px solid #ff7a1a;color:#ff7a1a;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;">
-         📋 Xem MENU
+      <a href="/menu"
+        class="px-8 py-4 rounded-full border border-primary text-primary hover:bg-primary hover:text-white font-bold">
+        📋 Xem Menu
       </a>
-      <a id="cta-route" class="btn outline"
-         href="https://maps.app.goo.gl/iDb19t73uJBGv31VA" target="_blank" rel="noopener"
-         style="border:2px solid #ff7a1a1;color:#ff7a1a;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;">
-         🗺️ Chỉ đường
+      <a href="https://maps.app.goo.gl/iDb19t73uJBGv31VA" target="_blank"
+        class="px-8 py-4 rounded-full border border-white/30 hover:bg-white/10">
+        🗺️ Chỉ đường
       </a>
     </div>
 
-    <!-- ✅ Địa chỉ rõ ràng -->
-    <p class="small" style="margin-top:16px;font-size:15px;opacity:.85;">
-      E16 Lô E, KDC Bàu Xéo, TT Trảng Bom (sau lưng trạm cân, đường vành đai song song QL1A)
+    <p class="text-sm italic opacity-80">
+      E16 Lô E, KDC Bàu Xéo – Trảng Bom (sau trạm cân)
     </p>
   </div>
-
-  <!-- ✅ Tracking Pixel (optional) -->
-  <script>
-    document.getElementById('cta-call')?.addEventListener('click',()=>{
-      try{fbq('track','Contact');}catch(e){}
-      try{ttq.track('Contact');}catch(e){}
-    });
-    document.getElementById('cta-menu')?.addEventListener('click',()=>{
-      try{fbq('track','ViewContent',{content_name:'Menu'});}catch(e){}
-      try{ttq.track('ViewContent',{content_name:'Menu'});}catch(e){}
-    });
-    document.getElementById('cta-route')?.addEventListener('click',()=>{
-      try{fbq('track','Lead');}catch(e){}
-      try{ttq.track('ClickButton',{button_name:'Route'});}catch(e){}
-    });
-  </script>
-</header>
-  
-<main class="wrap">
-  <section class="card">
-  <h2>Không gian xanh – phù hợp gia đình & tiệc</h2>
-  <p>Sân vườn thoáng, đèn vàng ấm; bàn dài cho nhóm 20–120 khách; trẻ nhỏ có chỗ chạy nhảy. Phù hợp sinh nhật, họp lớp, liên hoan.</p>
-
-  <div class="grid grid-3">
-    <img src="assets/img/space-1.jpg" alt="quán ăn Trảng Bom - không gian 1">
-    <img src="assets/img/space-2.jpg" alt="quán ăn Trảng Bom - không gian 2">
-    <img src="assets/img/space-3.jpg" alt="quán ăn Trảng Bom - không gian 3">
-  </div>
+</div>
 </section>
 
-  <section class="card">
-    <h2>Tổ chức sinh nhật – ưu đãi đặt trước</h2>
-    <p>Đặt trước: <b>miễn phí setup</b> hoặc <b>-5%</b> hóa đơn. LED & âm thanh cơ bản sẵn sàng.</p>
-    <div class="grid">
-      <img src="assets/img/setup-1.jpg" alt="Tổ chức sinh nhật Trảng Bom 1">
-      <img src="assets/img/setup-2.jpg" alt="Tổ chức sinh nhật Trảng Bom 2">
-      <img src="assets/img/setup-3.jpg" alt="Tổ chức sinh nhật Trảng Bom 3">
-    </div>
-    <p><a class="btn" href="to-chuc-sinh-nhat-trang-bom.html">Xem chi tiết</a></p>
-  </section>
-</main>
+<!-- KHÔNG GIAN -->
+<section class="px-6 lg:px-40 py-20">
+<div class="max-w-5xl space-y-8">
+  <h2 class="font-serif text-3xl lg:text-4xl font-bold">
+    Không gian xanh – phù hợp gia đình & tiệc
+  </h2>
+  <p class="text-muted">
+    Sân vườn thoáng, đèn vàng ấm; bàn dài cho nhóm 20–120 khách;
+    trẻ nhỏ có chỗ chạy nhảy. Phù hợp sinh nhật, họp lớp, liên hoan.
+  </p>
 
-<footer>© 2025 XOX Beer Garden</footer>
-  <nav style="text-align:center;margin-top:30px;">
-  <a href="/menu" style="margin:0 12px;color:#ff7a1a;font-weight:600;text-decoration:none;">📋 Xem menu</a>
-  <a href="/to-chuc-sinh-nhat-trang-bom.html" style="margin:0 12px;color:#ff7a1a;font-weight:600;text-decoration:none;">🎉 Tổ chức sinh nhật</a>
-</nav>
+  <div class="grid md:grid-cols-3 gap-6">
+    <img src="assets/img/space-1.jpg" class="rounded-xl">
+    <img src="assets/img/space-2.jpg" class="rounded-xl">
+    <img src="assets/img/space-3.jpg" class="rounded-xl">
+  </div>
+</div>
+</section>
 
-<script>
-  // Nút xem menu: gửi event ViewContent
-document.getElementById('cta-menu')?.addEventListener('click', () => {
-  try { ttq.track('ViewContent', { content_id: 'menu_page', content_type: 'service', content_name: 'Menu Page' }); } catch(e){}
-  try { fbq('track', 'ViewContent', { content_ids: ['menu_page'], content_type: 'product', content_name: 'Menu Page' }); } catch(e){}
-});
-  // Nút xem menu PDF: gửi event ViewContent (đúng chuẩn)
-  document.getElementById('cta-menu')?.addEventListener('click', () => {
-    // TikTok
-    try {
-      ttq.track('ViewContent', {
-        content_id: 'menu_pdf',
-        content_type: 'service',
-        content_name: 'Menu PDF'
-      });
-    } catch(e){}
+<!-- SINH NHẬT -->
+<section class="px-6 lg:px-40 py-20 bg-card border-t border-border">
+<div class="max-w-5xl space-y-8">
+  <h2 class="font-serif text-3xl font-bold">
+    Tổ chức sinh nhật – Ưu đãi đặt trước
+  </h2>
+  <p>
+    Đặt trước: <b>Miễn phí setup</b> hoặc <b>-5%</b> hóa đơn.  
+    LED & âm thanh cơ bản sẵn sàng.
+  </p>
 
-    // Facebook
-    try {
-      fbq('track', 'ViewContent', {
-        content_ids: ['menu_pdf'],
-        content_type: 'product',
-        content_name: 'Menu PDF'
-      });
-    } catch(e){}
-  });
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 650,
-    once: true,
-    offset: 60
-  });
-</script>
+  <div class="grid md:grid-cols-3 gap-6">
+    <img src="assets/img/setup-1.jpg" class="rounded-xl">
+    <img src="assets/img/setup-2.jpg" class="rounded-xl">
+    <img src="assets/img/setup-3.jpg" class="rounded-xl">
+  </div>
+
+  <a href="to-chuc-sinh-nhat-trang-bom.html"
+    class="inline-block mt-6 px-8 py-3 rounded-full bg-primary text-white font-bold">
+    🎉 Xem chi tiết sinh nhật
+  </a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black border-t border-border px-6 lg:px-40 py-12 text-center">
+  <h3 class="font-serif text-2xl font-bold">
+    XOX <span class="text-primary italic">Garden</span>
+  </h3>
+  <p class="text-muted mt-2">
+    © 2025 XOX Beer Garden – Trảng Bom
+  </p>
+</footer>
+
 </body>
 </html>
