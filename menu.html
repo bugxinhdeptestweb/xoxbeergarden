@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XOX Beer Garden - Menu</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3A5A40",
+                        "primary-hover": "#2e4733",
+                        "accent": "#B07D3A",
+                        "accent-light": "#d49a51",
+                        "background-light": "#FAF7F2",
+                        "surface-white": "#FFFFFF",
+                        "text-main": "#242424", 
+                        "text-secondary": "#6B6B6B",
+                        "border-color": "#E8E1D9",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                },
+            },
+        }
+</script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-067KJC9TT8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-067KJC9TT8');
+</script>
+<script>
+const menuItems = [
+  { id:"cf_hai_san", name:"Cơm chiên hải sản", category:"mon_no", price:89000, description:"Hải sản tươi, phần ăn lớn, hợp nhóm 3–4 người", isBestSeller:true, marginLevel:"medium", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuArRcQQwHYJ_A_Rk6EeO1EUrGXgtiDuAG9jHNr2Hju-AevoBa0kSHFVtE8TMCf-PMXTCyeU2458foYrXRaBpZpaWWnIDvVkhPjNMhXdJXHCn7gM61sirVw2XFu6u1ydhPEPReoqPHWGpfYHmBmNR2CQAjS4Bjn2gpsBzXo22TGMoQU1OlhmGQrWTh8l47jt_mPMvgZCJl-lgG66t4ySb-sy_NiT6V4CUQ_wdRtHGVMS-AA7laYPrgQDw_sOCZ0vocSX4FFlg2LLx5Ik" },
+  { id:"cha_gio_xox", name:"Chả giò XOX", category:"khai_vi", price:69000, description:"Giòn rụm, chấm sốt đặc trưng", isBestSeller:true, marginLevel:"high", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuDN_VWn6-2g-TmPAPhyP_GiBE9z7kOn9rT1Dej01nu_J2KNs4CUn9cRcmvXXyk9jv99IMh5iJpsuhmW4b-C19wkfdij2sYLtyNQ8-zKZGrYn37ERuggFz5LVn32jNskbgvaGb1FtqrZuGmCWvB3TyGu1FfQmEv3zSdA98wgDXIAL8YRiJI_Cj1nBpxQFRvveKsPGUm3uQCYMdbFQxFDdaEwxPGOtfy74ofQqsDAuzVYXNkY7B3OEA2uz_tjx0xkAwVG5nYn2VgR0erP" },
+  { id:"sun_ga_nm", name:"Sụn gà chiên nước mắm", category:"khai_vi", price:99000, description:"Giòn cay, nhắm bia cực cuốn", isBestSeller:true, marginLevel:"high", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuAMu8ADOhUJzlUZhGgHS0glI_XH-wxxal07IlrGM0wBBHOeG-j7sWwtUJQW-UImKgESyal8PqsL5Khn2J6Kn7yN9kjWF8vECi_tv1umEPrn-52a2r2ccAHS3oi-VXEwZhLqjffWqHlKnBf1PhSty7vSbf9BqW4InGIarxkIVP5ajtuDQ3tDmBpAnbl3uO54lBQL4vvC3uJFqRiVKfrcmcfUCpsF2SKrlhwOP6mr22CXIaY9DUkk74_CbD-EHjMKzg_z1hkiWiQrzq9Q" },
+  { id:"lau_thai_nho", name:"Lẩu Thái nhỏ", category:"lau", price:199000, description:"Chua cay đậm vị, phù hợp nhóm 3–4 người", isBestSeller:true, marginLevel:"medium", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuAHml6kws6weo9ICmUNytMU1fq_IwRqriKpoXkWINjUvijDPhqXHgPGIp9wgKLgXHCOfcBOBULCqFm5ZmK2CgEFde-BjO6E3oYpiV1oLqdSPuFy_iY29zgffGcg0ATAGYsBJ6dkVWlbGglm06z29SnVpOzNL4U_bWbYsDqaerlY-t5DLV78fqtk1A4r2S33sief-rbwEgBPq1WEFRgE31Wys7ZEG2x65Cc-ndGnTldfDuAVbfosh60D13_tNLod_f8XvOVGqjDCawK-" },
+  { id:"nuong_thap_cam", name:"Nướng thập cẩm", category:"nuong", price:299000, description:"Tổng hợp thịt & hải sản nướng", isBestSeller:true, marginLevel:"low", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuBf9VgvsfTgHOJ5bWUWIEkSWu_pBodfc9W4S7M_Wu5Vrdf9_HoNOTbPpfJTBjS6Yf78GiNC6KwIRtmjtaf-HD6vCFu3zQYcQapcxgLw8-pvMh3sTbS9XlXxZVpYWcKCO0xg7A7Xm6v0n5K2ZV5vzUQIlZPNvVZY5THmJI5LCqQPV2Kp3pE_hvQ8ruYNXJ1AxhLa_P5IMVtKTD-nWaS9hccwV6zzEa0crBCfwOvqqdsQBl5ZqqHwx6PoOUxAWfjAyO5eZEQHXrPR7sV_" },
+  { id:"khoai_tay_chien", name:"Khoai tây chiên", category:"khai_vi", price:39000, description:"Giòn, biên lợi nhuận cao", isBestSeller:false, marginLevel:"high", volumeLevel:"medium", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuArRcQQwHYJ_A_Rk6EeO1EUrGXgtiDuAG9jHNr2Hju-AevoBa0kSHFVtE8TMCf-PMXTCyeU2458foYrXRaBpZpaWWnIDvVkhPjNMhXdJXHCn7gM61sirVw2XFu6u1ydhPEPReoqPHWGpfYHmBmNR2CQAjS4Bjn2gpsBzXo22TGMoQU1OlhmGQrWTh8l47jt_mPMvgZCJl-lgG66t4ySb-sy_NiT6V4CUQ_wdRtHGVMS-AA7laYPrgQDw_sOCZ0vocSX4FFlg2LLx5Ik" },
+  { id:"ba_roi", name:"Ba rọi heo chiên giòn", category:"khai_vi", price:99000, description:"Giòn bì, béo vừa phải", isBestSeller:false, marginLevel:"high", volumeLevel:"medium", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuDN_VWn6-2g-TmPAPhyP_GiBE9z7kOn9rT1Dej01nu_J2KNs4CUn9cRcmvXXyk9jv99IMh5iJpsuhmW4b-C19wkfdij2sYLtyNQ8-zKZGrYn37ERuggFz5LVn32jNskbgvaGb1FtqrZuGmCWvB3TyGu1FfQmEv3zSdA98wgDXIAL8YRiJI_Cj1nBpxQFRvveKsPGUm3uQCYMdbFQxFDdaEwxPGOtfy74ofQqsDAuzVYXNkY7B3OEA2uz_tjx0xkAwVG5nYn2VgR0erP" },
+  { id:"rau_xao", name:"Rau xào thập cẩm", category:"mon_no", price:69000, description:"Thanh vị, dễ upsell combo", isBestSeller:false, marginLevel:"high", volumeLevel:"medium", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuArRcQQwHYJ_A_Rk6EeO1EUrGXgtiDuAG9jHNr2Hju-AevoBa0kSHFVtE8TMCf-PMXTCyeU2458foYrXRaBpZpaWWnIDvVkhPjNMhXdJXHCn7gM61sirVw2XFu6u1ydhPEPReoqPHWGpfYHmBmNR2CQAjS4Bjn2gpsBzXo22TGMoQU1OlhmGQrWTh8l47jt_mPMvgZCJl-lgG66t4ySb-sy_NiT6V4CUQ_wdRtHGVMS-AA7laYPrgQDw_sOCZ0vocSX4FFlg2LLx5Ik" },
+  { id:"suon_nuong", name:"Sườn nướng tảng", category:"nuong", price:189000, description:"Mềm, đậm sốt BBQ", isBestSeller:true, marginLevel:"medium", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuC_Yhhn4enArw1Wh2XiMw560dIpgzxrNdszcX6PGGUlKJ_hupoVQaX5TC-U0gtIPfIVKNclsv8WLsVUl_x_YZOz253DNnovcw2ulqDiVAKUIstx-ouChXWe-6Vt5ozHqGX4f7BQU3Zt5dAzpPNmL-mILNBtkxcLzAg2AhfgnmbNlH6cxE2GBhEfVnsKBM4exhSUyZK8nmPrqy7a4HWCW4w2SkKtL_RBBMGZOJGdGwZHXK154bpcrV7yiN1pedxqJzIRpoEP5zDHwXMz" },
+  { id:"xien_nuong", name:"Xiên nướng tổng hợp", category:"nuong", price:129000, description:"Phù hợp nhóm nhỏ", isBestSeller:false, marginLevel:"medium", volumeLevel:"medium", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuAMu8ADOhUJzlUZhGgHS0glI_XH-wxxal07IlrGM0wBBHOeG-j7sWwtUJQW-UImKgESyal8PqsL5Khn2J6Kn7yN9kjWF8vECi_tv1umEPrn-52a2r2ccAHS3oi-VXEwZhLqjffWqHlKnBf1PhSty7vSbf9BqW4InGIarxkIVP5ajtuDQ3tDmBpAnbl3uO54lBQL4vvC3uJFqRiVKfrcmcfUCpsF2SKrlhwOP6mr22CXIaY9DUkk74_CbD-EHjMKzg_z1hkiWiQrzq9Q" }
+];
+
+const comboSets = [
+  { id:"combo_4", name:"Combo 4 Người Best Seller", price:750000, groupSize:4, marginLevel:"medium" },
+  { id:"combo_10", name:"Combo Tiệc 10 Người", price:1300000, groupSize:10, marginLevel:"medium" }
+];
+
+document.addEventListener("DOMContentLoaded", function () {
+    function triggerGenerateLead(source, e, url) {
+        if(e) e.preventDefault();
+        gtag('event', 'generate_lead', { lead_channel: source });
+        if(url) {
+            setTimeout(function() { window.open(url, '_blank'); }, 250);
+        }
+    }
+
+    gtag('event', 'view_item_list', { item_list_name: 'menu_page' });
+
+    const formatPrice = (price) => new Intl.NumberFormat('vi-VN').format(price) + 'đ';
+
+    const createMenuCard = (item, isBestSellerBlock = false) => {
+        const bestSellerBadge = item.isBestSeller ? `<div class="absolute top-2 left-2 z-10 bg-accent text-white px-2 py-1 rounded text-[10px] uppercase font-bold shadow-sm">Best-seller</div>` : '';
+        
+        if (isBestSellerBlock) {
+            return `
+                <div class="group flex flex-col gap-3 bg-surface-white p-3 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-transparent hover:border-primary/20 menu-item-card cursor-pointer" data-id="${item.id}" data-name="${item.name}" data-category="${item.category}" data-price="${item.price}" data-margin="${item.marginLevel}">
+                    <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-gray-100">
+                        ${bestSellerBadge}
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('${item.image || ''}');"></div>
+                    </div>
+                    <div>
+                        <p class="text-text-main text-base font-bold leading-tight group-hover:text-primary transition-colors">${item.name}</p>
+                        <p class="text-text-secondary text-xs mt-1 line-clamp-1">${item.description}</p>
+                        <p class="text-primary text-sm font-bold mt-1">${formatPrice(item.price)}</p>
+                    </div>
+                </div>
+            `;
+        } else if (item.category === 'lau') {
+            return `
+            <div class="col-span-2 md:col-span-2 group cursor-pointer bg-white p-3 rounded-xl border border-border-color menu-item-card" data-id="${item.id}" data-name="${item.name}" data-category="${item.category}" data-price="${item.price}" data-margin="${item.marginLevel}">
+                <div class="flex gap-4 items-center">
+                    <div class="w-24 h-24 rounded-lg bg-gray-100 overflow-hidden shrink-0 relative">
+                        ${bestSellerBadge}
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('${item.image || ''}');"></div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-base group-hover:text-primary transition-colors">${item.name}</h4>
+                        <p class="text-text-secondary text-xs line-clamp-2 my-1">${item.description}</p>
+                        <p class="text-accent text-sm font-bold">${formatPrice(item.price)}</p>
+                    </div>
+                </div>
+            </div>`;
+        } else {
+            return `
+            <div class="group cursor-pointer menu-item-card" data-id="${item.id}" data-name="${item.name}" data-category="${item.category}" data-price="${item.price}" data-margin="${item.marginLevel}">
+                <div class="w-full aspect-square rounded-xl bg-gray-100 overflow-hidden mb-2 relative">
+                    ${bestSellerBadge}
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('${item.image || ''}');"></div>
+                </div>
+                <h4 class="font-bold text-sm group-hover:text-primary transition-colors">${item.name}</h4>
+                <p class="text-accent text-sm font-bold">${formatPrice(item.price)}</p>
+            </div>`;
+        }
+    };
+
+    const bestSellersContainer = document.getElementById('best-sellers-grid');
+    if (bestSellersContainer) {
+        bestSellersContainer.innerHTML = menuItems.filter(item => item.isBestSeller).map(item => createMenuCard(item, true)).join('');
+    }
+
+    const categories = [
+        { id: 'khai-vi-grid', category: 'khai_vi' },
+        { id: 'nuong-grid', category: 'nuong' },
+        { id: 'lau-grid', category: 'lau' },
+        { id: 'hai-san-grid', category: 'hai_san' },
+        { id: 'mon-no-grid', category: 'mon_no' },
+        { id: 'do-uong-grid', category: 'do_uong' },
+    ];
+
+    categories.forEach(cat => {
+        const catContainer = document.getElementById(cat.id);
+        if (catContainer) {
+            catContainer.innerHTML = menuItems.filter(item => item.category === cat.category).map(item => createMenuCard(item)).join('');
+        }
+    });
+
+    const bannerHtml = `
+        <div class="col-span-2 md:col-span-3 lg:col-span-3 mt-6 bg-accent/10 border border-accent/20 rounded-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 w-full cursor-pointer hover:bg-accent/20 transition-colors" id="combo-cta-banner">
+            <div>
+                <h4 class="font-bold text-accent text-lg">Gợi ý Combo 4 Người từ 750.000đ</h4>
+                <p class="text-text-secondary text-sm">Tiết kiệm hơn, đầy đủ món khai vị, nướng và lẩu.</p>
+            </div>
+            <button class="bg-accent text-white font-bold h-11 px-6 rounded-xl hover:bg-accent-light transition-colors shadow-md whitespace-nowrap">
+                Tư vấn Combo
+            </button>
+        </div>
+    `;
+    const bsGrid = document.getElementById('best-sellers-grid');
+    if(bsGrid) {
+        bsGrid.insertAdjacentHTML('afterend', bannerHtml);
+        document.getElementById('combo-cta-banner').addEventListener('click', function(e) {
+            triggerGenerateLead('menu_combo_banner', e, 'https://zalo.me/0975229739');
+        });
+    }
+
+    document.querySelectorAll('.menu-item-card').forEach(card => {
+        card.addEventListener('click', function() {
+            gtag('event', 'select_item', {
+                item_id: this.dataset.id,
+                item_name: this.dataset.name,
+                item_category: this.dataset.category,
+                price: parseFloat(this.dataset.price),
+                margin_level: this.dataset.margin
+            });
+        });
+    });
+
+    // General Tracking Bindings
+    document.querySelectorAll(".cta-zalo, a[href*='zalo.me']").forEach(function(el) {
+        el.addEventListener("click", function(e) {
+            triggerGenerateLead('zalo', e, 'https://zalo.me/0975229739');
+        });
+    });
+    document.querySelectorAll(".cta-call, a[href^='tel:']").forEach(function(el) {
+        el.addEventListener("click", function(e) {
+            triggerGenerateLead('call', null, null); 
+        });
+    });
+    document.querySelectorAll("a[href*='facebook.com'], a[href*='m.me']").forEach(function(el) {
+        el.addEventListener("click", function(e) {
+            triggerGenerateLead('messenger', e, el.getAttribute('href'));
+        });
+    });
+});
+</script>
+</head>
+<body class="bg-background-light font-display antialiased text-text-main selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-[80px] md:pb-0">
+<header class="sticky top-0 z-50 w-full border-b border-border-color bg-background-light/95 backdrop-blur-md shadow-sm">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-3">
+<div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
+<div class="flex items-center justify-between whitespace-nowrap">
+<div class="flex items-center gap-3 text-primary">
+<div class="size-8 flex items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-2xl">local_bar</span>
+</div>
+<h2 class="text-primary text-xl font-bold leading-tight tracking-tight">XOX Beer Garden</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-6">
+<a class="text-text-main text-sm font-semibold hover:text-primary transition-colors" href="/">Trang chủ</a>
+<a class="text-primary text-sm font-bold" href="/menu">Menu</a>
+<a class="text-text-main text-sm font-semibold hover:text-primary transition-colors" href="/to-chuc-sinh-nhat-trang-bom.html">Dịch vụ tiệc</a>
+</div>
+<button class="cta-call flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all transform hover:-translate-y-0.5">
+<a href="tel:0975229739" class="truncate">Đặt bàn ngay</a>
+</button>
+</div>
+<div class="flex md:hidden text-primary">
+<span class="material-symbols-outlined cursor-pointer text-3xl">menu</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex flex-col items-center">
+<section class="w-full flex justify-center px-4 md:px-10 lg:px-40 py-6">
+<div class="w-full max-w-[960px]">
+<div class="@container">
+<div class="flex flex-col-reverse md:flex-row gap-6 md:min-h-[480px] bg-cover bg-center bg-no-repeat rounded-3xl overflow-hidden relative shadow-2xl" data-alt="Beer garden party atmosphere" style='background-image: linear-gradient(to right, rgba(20, 30, 15, 0.9) 0%, rgba(20, 30, 15, 0.6) 50%, rgba(0, 0, 0, 0.3) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtq7WTMex9d4dOHivYAUHY2OjZiabNAAYIMMrHC4UQBGcfc0ei7qOKVvcna8SPbtNWQTDAHWX8IobzxFqPxsTlzX9202CpulxP6qp3xVzn4ruPaKTaWsOB56te-iz2qYeTF4nBlHvJGiS1ka5JvbjtNJNFk1h8UBS9FtlFS0OZ1SFrmQBMtFy29u6VfHeBK9m-c2KdewpkvOpU4Q4Vg4F6nLcayMGdE07mmztWl04yNPkM9j0XGY82Bi2wJHMQg2EFjUNGXC3wDzZC");'>
+<div class="flex flex-col justify-center items-start gap-6 p-8 md:p-12 z-10 md:w-3/4">
+<div class="inline-flex items-center gap-2 rounded-full bg-accent text-white px-5 py-2 shadow-lg border border-white/20 animate-pulse">
+<span class="material-symbols-outlined text-xl">verified</span>
+<span class="text-base font-bold uppercase tracking-wide">Món từ 39k</span>
+</div>
+<div class="flex flex-col gap-3 text-left">
+<h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight drop-shadow-sm">
+                                        Menu <span class="text-accent">XOX</span> Beer Garden
+                                    </h1>
+<h2 class="text-gray-100 text-base md:text-lg font-medium leading-relaxed max-w-[500px] opacity-90">
+                                        Không gian tiệc sân vườn vintage tại Trảng Bom. Mồi bén, bia ngon, chốt tiệc nhanh chóng.
+                                    </h2>
+</div>
+<div class="flex flex-wrap gap-3 w-full mt-2">
+<a href="tel:0975229739" class="cta-call flex-1 md:flex-none min-w-[140px] cursor-pointer inline-flex items-center justify-center rounded-xl h-12 px-6 bg-primary text-white text-sm font-bold shadow-lg hover:bg-primary-hover hover:-translate-y-1 transition-all">
+                                        Đặt bàn
+                                    </a>
+<button class="cta-zalo flex-1 md:flex-none min-w-[140px] cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-white text-primary text-sm font-bold shadow-lg hover:bg-gray-50 hover:-translate-y-1 transition-all">
+<span class="flex items-center gap-2 justify-center">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                                            Nhắn Zalo
+                                        </span>
+</button>
+<a href="tel:0975229739" class="cta-call flex-1 md:flex-none min-w-[140px] cursor-pointer inline-flex items-center justify-center rounded-xl h-12 px-6 bg-transparent border border-white/40 text-white text-sm font-bold hover:bg-white/10 transition-all">
+<span class="flex items-center gap-2 justify-center">
+<span class="material-symbols-outlined text-[18px]">call</span>
+                                            Gọi hotline
+                                        </span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="sticky top-[65px] z-40 w-full bg-background-light/95 backdrop-blur border-b border-border-color shadow-sm">
+<div class="flex justify-center px-4 md:px-10 lg:px-40">
+<div class="w-full max-w-[960px] overflow-x-auto no-scrollbar">
+<div class="flex min-w-max gap-6 px-2">
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-primary py-4" href="#best-sellers">
+<span class="text-primary text-sm font-bold tracking-wide transition-colors">BEST SELLERS</span>
+</a>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#khai-vi">
+<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">KHAI VỊ</span>
+</a>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#nuong">
+<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">NƯỚNG</span>
+</a>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#lau">
+<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">LẨU</span>
+</a>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#hai-san">
+<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">HẢI SẢN</span>
+</a>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#mon-no">
+<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">MÓN NO</span>
+</a>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#do-uong">
+<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">ĐỒ UỐNG</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full max-w-[960px] px-4 md:px-10 lg:px-40 flex flex-col gap-16 py-10">
+<section class="scroll-mt-32" id="best-sellers">
+<div class="flex items-center justify-between pb-6 pt-2">
+<h2 class="text-text-main text-2xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-accent">verified</span>
+                            Top 6 Món Best-Seller
+                        </h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6" id="best-sellers-grid">
+</div>
+</section>
+<section class="scroll-mt-32" id="khai-vi">
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Khai Vị &amp; Lai Rai</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="khai-vi-grid">
+</div>
+</section>
+<section class="scroll-mt-32" id="nuong">
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Món Nướng Than Hoa</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="nuong-grid">
+</div>
+</section>
+<section class="scroll-mt-32" id="lau">
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Lẩu &amp; Món Nước</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="lau-grid">
+</div>
+</section>
+<section class="scroll-mt-32" id="hai-san">
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Hải Sản</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="hai-san-grid">
+</div>
+</section>
+<section class="scroll-mt-32" id="mon-no">
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Món No &amp; Cơm Mì</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="mon-no-grid">
+</div>
+</section>
+<section class="scroll-mt-32" id="do-uong">
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Đồ Uống &amp; Beer</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="do-uong-grid">
+</div>
+</section>
+
+<section class="scroll-mt-32">
+<h2 class="text-text-main text-2xl font-bold flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-accent">groups</span>
+                        Combo Theo Nhóm
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col bg-white border border-border-color rounded-2xl p-6 shadow-sm hover:border-accent transition-colors">
+<div class="mb-4">
+<h3 class="text-xl font-black text-primary">Set 2 Người</h3>
+<p class="text-text-secondary text-sm">Hẹn hò lãng mạn &amp; ấm cúng</p>
+</div>
+<ul class="flex-1 space-y-2 mb-6">
+<li class="flex items-start gap-2 text-sm text-text-main">
+<span class="material-symbols-outlined text-accent text-[18px]">check</span> 1 Khai vị nhẹ nhàng
+                                </li>
+<li class="flex items-start gap-2 text-sm text-text-main">
+<span class="material-symbols-outlined text-accent text-[18px]">check</span> 1 Món nướng best-seller
+                                </li>
+<li class="flex items-start gap-2 text-sm text-text-main">
+<span class="material-symbols-outlined text-accent text-[18px]">check</span> 2 Ly bia thủ công
+                                </li>
+</ul>
+<button class="cta-zalo w-full py-3 rounded-xl border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                                Nhận gợi ý menu
+                            </button>
+</div>
+<div class="flex flex-col bg-white border border-border-color rounded-2xl p-6 shadow-md relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-xl">POPULAR</div>
+<div class="mb-4">
+<h3 class="text-xl font-black text-primary">Set 4 Người</h3>
+<p class="text-text-secondary text-sm">Lai rai cùng chiến hữu</p>
+</div>
+<ul class="flex-1 space-y-2 mb-6">
+<li class="flex items-start gap-2 text-sm text-text-main">
+<span class="material-symbols-outlined text-accent text-[18px]">check</span> 2 Món khai vị
+                                </li>
+<li class="flex items-start gap-2 text-sm text-text-main">
+<span class="material-symbols-outlined text-accent text-[18px]">check</span> 1 Lẩu thái chua cay
+                                </li>
+<li class="flex items-start gap-2 text-sm text-text-main">
+<span class="material-symbols-outlined text-accent text-[18px]">check</span> 1 Tháp bia mát lạnh
+                                </li>
+</ul>
+<button class="cta-zalo w-full py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary-hover transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                                Nhận gợi ý menu
+                            </button>
+</div>
+<div class="flex flex-col bg-white border border-border-color rounded-2xl p-6 shadow-sm hover:border-accent transition-colors">
+<div class="mb-4">
+<h3 class="text-xl font-black text-primary">Set 10 Người</h3>
+<p class="text-text-secondary text-sm">Tiệc tùng ga - Bao no</p>
+</div>
+<ul class="flex-1 space-y-2 mb-6">
+<li class="flex items-start gap-2 text-sm text-text-main">
+<span class="material-symbols-outlined text-accent text-[18px]">check</span> Menu 7 món đặc sắc
+                                </li>
+<li class="flex items-start gap-2 text-sm text-text-main">
+<span class="material-symbols-outlined text-accent text-[18px]">check</span> Combo Lẩu &amp; Nướng
+                                </li>
+<li class="flex items-start gap-2 text-sm text-text-main">
+<span class="material-symbols-outlined text-accent text-[18px]">check</span> Ưu đãi đặt tiệc trước
+                                </li>
+</ul>
+<button class="cta-zalo w-full py-3 rounded-xl border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                                Nhận gợi ý menu
+                            </button>
+</div>
+</div>
+</section>
+<section class="py-10 my-4 border-y border-border-color/50 bg-white/60 -mx-4 md:-mx-10 lg:-mx-40 px-4 md:px-10 lg:px-40">
+<div class="w-full max-w-[960px] mx-auto">
+<div class="text-center mb-8">
+<span class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-2 block">Feedback</span>
+<h2 class="text-text-main text-3xl font-black">Khách nói gì về món XOX?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-surface-white p-5 rounded-xl border border-border-color shadow-sm">
+<p class="text-text-main text-sm italic mb-4">"Món sườn nướng BBQ rất ngon, sốt đậm đà, thịt mềm. Sẽ quay lại!"</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary">Ngọc Lan</span>
+<span class="text-[10px] text-text-secondary uppercase tracking-wide bg-gray-100 px-2 py-1 rounded">via Facebook</span>
+</div>
+</div>
+<div class="bg-surface-white p-5 rounded-xl border border-border-color shadow-sm">
+<p class="text-text-main text-sm italic mb-4">"Không gian đẹp, thoáng. Nhân viên tư vấn nhiệt tình. Lẩu cua đồng xuất sắc."</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary">Minh Hoàng</span>
+<span class="text-[10px] text-text-secondary uppercase tracking-wide bg-gray-100 px-2 py-1 rounded">via Inbox</span>
+</div>
+</div>
+<div class="bg-surface-white p-5 rounded-xl border border-border-color shadow-sm">
+<p class="text-text-main text-sm italic mb-4">"Bia craft ngon, mồi bén. Giá cả hợp lý cho buổi tụ tập cuối tuần."</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary">Tuấn Anh</span>
+<span class="text-[10px] text-text-secondary uppercase tracking-wide bg-gray-100 px-2 py-1 rounded">via Facebook</span>
+</div>
+</div>
+<div class="bg-surface-white p-5 rounded-xl border border-border-color shadow-sm hidden md:block">
+<p class="text-text-main text-sm italic mb-4">"Thích nhất là món tôm nướng, tươi roi rói. Nhạc chill."</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary">Khánh Duy</span>
+<span class="text-[10px] text-text-secondary uppercase tracking-wide bg-gray-100 px-2 py-1 rounded">via Inbox</span>
+</div>
+</div>
+<div class="bg-surface-white p-5 rounded-xl border border-border-color shadow-sm hidden md:block">
+<p class="text-text-main text-sm italic mb-4">"Menu đa dạng, gọi món lên nhanh. Rất thích hợp đặt tiệc sinh nhật."</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary">Hương Giang</span>
+<span class="text-[10px] text-text-secondary uppercase tracking-wide bg-gray-100 px-2 py-1 rounded">via Facebook</span>
+</div>
+</div>
+<div class="bg-surface-white p-5 rounded-xl border border-border-color shadow-sm hidden md:block">
+<p class="text-text-main text-sm italic mb-4">"Lẩu thái chua cay đúng vị, hải sản nhiều. 10 điểm!"</p>
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-primary">Thanh Tâm</span>
+<span class="text-[10px] text-text-secondary uppercase tracking-wide bg-gray-100 px-2 py-1 rounded">via Inbox</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-8 mb-4">
+<div class="bg-primary rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-8 items-center">
+<div class="flex-1 text-center md:text-left">
+<h3 class="text-white text-2xl md:text-4xl font-black mb-3 leading-tight">Chốt menu cho nhóm bạn trong 15 phút</h3>
+<p class="text-gray-200 text-base mb-6 font-medium">Để lại thông tin, XOX sẽ tư vấn set menu phù hợp nhất với ngân sách của bạn.</p>
+<div class="flex flex-wrap gap-2 justify-center md:justify-start">
+<span class="bg-white/10 text-xs text-white px-3 py-1.5 rounded-full border border-white/20 backdrop-blur-sm">Đặt tiệc nhanh</span>
+<span class="bg-white/10 text-xs text-white px-3 py-1.5 rounded-full border border-white/20 backdrop-blur-sm">Tư vấn miễn phí</span>
+</div>
+</div>
+<div class="w-full md:w-auto md:min-w-[400px]">
+<form class="flex flex-col gap-3 bg-white/10 p-5 rounded-2xl border border-white/10 backdrop-blur-md shadow-inner">
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-1">
+<label class="text-xs text-gray-200 font-medium ml-1">Số khách</label>
+<input class="w-full h-11 rounded-xl bg-white/90 border-transparent text-text-main px-3 text-sm focus:ring-2 focus:ring-accent outline-none transition-all placeholder:text-gray-400" placeholder="VD: 10 người" type="number"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-xs text-gray-200 font-medium ml-1">Ngày tổ chức</label>
+<input class="w-full h-11 rounded-xl bg-white/90 border-transparent text-text-main px-3 text-sm focus:ring-2 focus:ring-accent outline-none transition-all placeholder:text-gray-400" type="date"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-xs text-gray-200 font-medium ml-1">Ngân sách dự kiến (Optional)</label>
+<select class="w-full h-11 rounded-xl bg-white/90 border-transparent text-text-main px-3 text-sm focus:ring-2 focus:ring-accent outline-none transition-all cursor-pointer">
+<option>Chưa xác định</option>
+<option>200k - 300k / người</option>
+<option>300k - 500k / người</option>
+<option>Trên 500k / người</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-xs text-gray-200 font-medium ml-1">Số điện thoại</label>
+<input class="w-full h-11 rounded-xl bg-white/90 border-transparent text-text-main px-3 text-sm focus:ring-2 focus:ring-accent outline-none transition-all placeholder:text-gray-400" placeholder="09xxxxxxx" type="tel"/>
+</div>
+<button class="mt-2 w-full h-12 bg-accent text-white font-bold rounded-xl hover:bg-white hover:text-primary transition-colors flex items-center justify-center gap-2 shadow-lg cta-call" type="button">
+<span class="material-symbols-outlined">send</span>
+                                        Nhận tư vấn
+                                    </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 p-3 flex gap-2 md:hidden shadow-[0_-4px_10px_rgba(0,0,0,0.05)] pb-safe">
+<button class="cta-call flex-1 bg-white border border-border-color text-text-main font-bold rounded-xl h-11 flex items-center justify-center gap-1.5 shadow-sm text-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary text-[20px]">call</span>
+                Call
+            </button>
+<button class="cta-zalo flex-1 bg-accent text-white font-bold rounded-xl h-11 flex items-center justify-center gap-1.5 shadow-sm text-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                Zalo
+            </button>
+<button class="cta-call flex-1 bg-primary text-white font-bold rounded-xl h-11 flex items-center justify-center gap-1.5 shadow-sm text-sm active:scale-95 transition-transform">
+                Đặt bàn
+            </button>
+</div>
+</div>
+</body></html>
