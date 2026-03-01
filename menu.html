@@ -75,6 +75,9 @@
                 { id: 'do-uong-grid', category: 'do_uong' }
             ];
 
+            let globalMenuItems = [];
+            const categoryState = {};
+
             function triggerGenerateLead(source, e, url) {
                 if (e) e.preventDefault();
                 gtag('event', 'generate_lead', { source: source });
@@ -131,29 +134,84 @@
                 }
             };
 
-            function renderBestSeller(menuItems) {
-                if (!bestSellersContainer) return;
-                const bestSellers = menuItems.filter(item => item.isBestSeller === true);
-                bestSellersContainer.innerHTML = bestSellers.map(item => createMenuCard(item, true)).join('');
+            function bindCardEvents(container) {
+                if (!container) return;
+                container.querySelectorAll('.menu-item-card').forEach(card => {
+                    if (!card.dataset.bound) {
+                        card.dataset.bound = "true";
+                        card.addEventListener('click', function () {
+                            gtag('event', 'select_item', {
+                                item_id: this.dataset.id,
+                                item_name: this.dataset.name,
+                                item_category: this.dataset.category,
+                                price: parseFloat(this.dataset.price)
+                            });
+                        });
+                    }
+                });
             }
 
-            function renderSection(menuItems, category_id, category_slug) {
-                const catContainer = document.getElementById(category_id);
+            function renderBestSeller() {
+                if (!bestSellersContainer) return;
+                const bestSellers = globalMenuItems.filter(item => item.isBestSeller === true);
+                bestSellersContainer.innerHTML = bestSellers.map(item => createMenuCard(item, true)).join('');
+                bindCardEvents(bestSellersContainer);
+            }
+
+            function renderSection(category_slug) {
+                const catDef = categories.find(c => c.category === category_slug);
+                if (!catDef) return;
+
+                const catContainer = document.getElementById(catDef.id);
                 if (!catContainer) return;
-                const sectionItems = menuItems.filter(item => item.category === category_slug);
-                catContainer.innerHTML = sectionItems.map(item => createMenuCard(item)).join('');
+
+                if (!categoryState[category_slug]) {
+                    categoryState[category_slug] = 4;
+                }
+
+                const sectionItems = globalMenuItems.filter(item => item.category === category_slug);
+                const visibleCount = categoryState[category_slug];
+                const itemsToRender = sectionItems.slice(0, visibleCount);
+
+                let html = itemsToRender.map(item => createMenuCard(item)).join('');
+
+                if (visibleCount < sectionItems.length) {
+                    const colSpanClass = (category_slug === 'mon_chinh' || category_slug === 'nuong') ? 'col-span-2' : 'col-span-2 md:col-span-4';
+                    html += `
+                    <div class="${colSpanClass} flex justify-center mt-6 mb-2 w-full">
+                        <button class="load-more-btn px-6 py-2.5 bg-white border border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all shadow-sm flex items-center gap-2" data-category="${category_slug}">
+                            Xem thêm <span class="material-symbols-outlined text-[18px]">expand_more</span>
+                        </button>
+                    </div>`;
+                }
+
+                catContainer.innerHTML = html;
+
+                const loadMoreBtn = catContainer.querySelector('.load-more-btn');
+                if (loadMoreBtn) {
+                    loadMoreBtn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        handleLoadMore(category_slug);
+                    });
+                }
+
+                bindCardEvents(catContainer);
+            }
+
+            function handleLoadMore(category_slug) {
+                if (categoryState[category_slug]) {
+                    categoryState[category_slug] += 4;
+                    renderSection(category_slug);
+                }
             }
 
             try {
                 const response = await fetch('menu-data.json');
-                const menuItems = await response.json();
+                globalMenuItems = await response.json();
 
                 // Render functions
-                renderBestSeller(menuItems);
-
-                categories.forEach(cat => {
-                    renderSection(menuItems, cat.id, cat.category);
-                });
+                renderBestSeller();
+                categories.forEach(cat => renderSection(cat.category));
 
                 // Inject combo CTA banner
                 const bannerHtml = `
@@ -173,18 +231,6 @@
                         triggerGenerateLead('menu_page', e, 'https://zalo.me/0975229739');
                     });
                 }
-
-                // Apply select_item tracking after render
-                document.querySelectorAll('.menu-item-card').forEach(card => {
-                    card.addEventListener('click', function () {
-                        gtag('event', 'select_item', {
-                            item_id: this.dataset.id,
-                            item_name: this.dataset.name,
-                            item_category: this.dataset.category,
-                            price: parseFloat(this.dataset.price)
-                        });
-                    });
-                });
             } catch (error) {
                 console.error('Error fetching menu data:', error);
             }
