@@ -1,0 +1,226 @@
+[
+  {
+    "id": "combo-4-nguoi",
+    "name": "Combo 4 Người",
+    "category": "best_seller",
+    "price": 750000,
+    "isBestSeller": true
+  },
+  {
+    "id": "combo-10-nguoi",
+    "name": "Combo Tiệc 10 Người",
+    "category": "best_seller",
+    "price": 1300000,
+    "isBestSeller": true
+  },
+  {
+    "id": "sun-ga-chien-nuoc-mam",
+    "name": "Sụn gà chiên nước mắm",
+    "category": "khai_vi",
+    "price": 99000,
+    "isBestSeller": true
+  },
+  {
+    "id": "cha-gio-xox",
+    "name": "Chả giò XOX",
+    "category": "khai_vi",
+    "price": 69000,
+    "isBestSeller": true
+  },
+  {
+    "id": "com-chien-hai-san",
+    "name": "Cơm chiên hải sản",
+    "category": "mon_chinh",
+    "price": 89000,
+    "isBestSeller": true
+  },
+  {
+    "id": "lau-thai-nho",
+    "name": "Lẩu Thái nhỏ",
+    "category": "mon_chinh",
+    "price": 199000,
+    "isBestSeller": true
+  },
+  {
+    "id": "nuong-thap-cam",
+    "name": "Nướng thập cẩm",
+    "category": "nuong",
+    "price": 299000,
+    "isBestSeller": true
+  },
+  {
+    "id": "goi-ngu-sac-thit-bo",
+    "name": "Gỏi ngũ sắc thịt bò",
+    "category": "khai_vi",
+    "price": 119000,
+    "isBestSeller": true
+  },
+  {
+    "id": "khoai-tay-chien",
+    "name": "Khoai tây chiên",
+    "category": "an_nhe",
+    "price": 39000,
+    "isBestSeller": false
+  },
+  {
+    "id": "dau-phong-luoc",
+    "name": "Đậu phộng luộc",
+    "category": "an_nhe",
+    "price": 25000,
+    "isBestSeller": false
+  },
+  {
+    "id": "banh-phong-tom",
+    "name": "Bánh phồng tôm",
+    "category": "an_nhe",
+    "price": 15000,
+    "isBestSeller": false
+  },
+  {
+    "id": "goi-cuon-tom-thit",
+    "name": "Gỏi cuốn tôm thịt",
+    "category": "khai_vi",
+    "price": 59000,
+    "isBestSeller": false
+  },
+  {
+    "id": "muc-chien-gion",
+    "name": "Mực chiên giòn",
+    "category": "lai_rai",
+    "price": 129000,
+    "isBestSeller": false
+  },
+  {
+    "id": "ech-Sapo",
+    "name": "Ếch sapo",
+    "category": "lai_rai",
+    "price": 139000,
+    "isBestSeller": false
+  },
+  {
+    "id": "bo-luc-lac",
+    "name": "Bò lúc lắc hạt điều",
+    "category": "lai_rai",
+    "price": 149000,
+    "isBestSeller": false
+  },
+  {
+    "id": "suon-nuong-tang",
+    "name": "Sườn nướng tảng",
+    "category": "nuong",
+    "price": 189000,
+    "isBestSeller": false
+  },
+  {
+    "id": "ga-nuong-lu",
+    "name": "Gà nướng lu",
+    "category": "nuong",
+    "price": 219000,
+    "isBestSeller": false
+  },
+  {
+    "id": "xien-nuong-tong-hop",
+    "name": "Xiên nướng tổng hợp",
+    "category": "nuong",
+    "price": 129000,
+    "isBestSeller": false
+  },
+  {
+    "id": "ech-nuong-muoi-ot",
+    "name": "Ếch nướng muối ớt",
+    "category": "nuong",
+    "price": 119000,
+    "isBestSeller": false
+  },
+  {
+    "id": "lau-thai-lon",
+    "name": "Lẩu Thái hải sản (Lớn)",
+    "category": "mon_chinh",
+    "price": 289000,
+    "isBestSeller": false
+  },
+  {
+    "id": "lau-cua-dong",
+    "name": "Lẩu cua đồng bắp bò",
+    "category": "mon_chinh",
+    "price": 259000,
+    "isBestSeller": false
+  },
+  {
+    "id": "ca-diec-chien-gion",
+    "name": "Cá diếc chiên giòn mắm me",
+    "category": "mon_chinh",
+    "price": 169000,
+    "isBestSeller": false
+  },
+  {
+    "id": "heineken",
+    "name": "Heineken",
+    "category": "bia_nuoc_ngot",
+    "price": 22000,
+    "isBestSeller": false
+  },
+  {
+    "id": "tiger",
+    "name": "Tiger",
+    "category": "bia_nuoc_ngot",
+    "price": 20000,
+    "isBestSeller": false
+  },
+  {
+    "id": "saigon-special",
+    "name": "Sài Gòn Special",
+    "category": "bia_nuoc_ngot",
+    "price": 18000,
+    "isBestSeller": false
+  },
+  {
+    "id": "coca-cola",
+    "name": "Coca Cola",
+    "category": "bia_nuoc_ngot",
+    "price": 15000,
+    "isBestSeller": false
+  },
+  {
+    "id": "nuoc-suoi",
+    "name": "Nước suối",
+    "category": "bia_nuoc_ngot",
+    "price": 10000,
+    "isBestSeller": false
+  },
+  {
+    "id": "ca-phe-den",
+    "name": "Cà phê đen đá",
+    "category": "do_uong",
+    "price": 25000,
+    "isBestSeller": false
+  },
+  {
+    "id": "ca-phe-sua",
+    "name": "Cà phê sữa đá",
+    "category": "do_uong",
+    "price": 30000,
+    "isBestSeller": false
+  },
+  {
+    "id": "tra-dao",
+    "name": "Trà đào cam sả",
+    "category": "do_uong",
+    "price": 45000,
+    "isBestSeller": false
+  },
+  {
+    "id": "nuoc-ep-cam",
+    "name": "Nước ép cam tươi",
+    "category": "do_uong",
+    "price": 45000,
+    "isBestSeller": false
+  },
+  {
+    "id": "soda-chanh-day",
+    "name": "Soda chanh dây",
+    "category": "do_uong",
+    "price": 40000,
+    "isBestSeller": false
+  }
+]

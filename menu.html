@@ -52,28 +52,15 @@
   gtag('config', 'G-067KJC9TT8');
 </script>
 <script>
-const menuItems = [
-  { id:"cf_hai_san", name:"Cơm chiên hải sản", category:"mon_no", price:89000, description:"Hải sản tươi, phần ăn lớn, hợp nhóm 3–4 người", isBestSeller:true, marginLevel:"medium", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuArRcQQwHYJ_A_Rk6EeO1EUrGXgtiDuAG9jHNr2Hju-AevoBa0kSHFVtE8TMCf-PMXTCyeU2458foYrXRaBpZpaWWnIDvVkhPjNMhXdJXHCn7gM61sirVw2XFu6u1ydhPEPReoqPHWGpfYHmBmNR2CQAjS4Bjn2gpsBzXo22TGMoQU1OlhmGQrWTh8l47jt_mPMvgZCJl-lgG66t4ySb-sy_NiT6V4CUQ_wdRtHGVMS-AA7laYPrgQDw_sOCZ0vocSX4FFlg2LLx5Ik" },
-  { id:"cha_gio_xox", name:"Chả giò XOX", category:"khai_vi", price:69000, description:"Giòn rụm, chấm sốt đặc trưng", isBestSeller:true, marginLevel:"high", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuDN_VWn6-2g-TmPAPhyP_GiBE9z7kOn9rT1Dej01nu_J2KNs4CUn9cRcmvXXyk9jv99IMh5iJpsuhmW4b-C19wkfdij2sYLtyNQ8-zKZGrYn37ERuggFz5LVn32jNskbgvaGb1FtqrZuGmCWvB3TyGu1FfQmEv3zSdA98wgDXIAL8YRiJI_Cj1nBpxQFRvveKsPGUm3uQCYMdbFQxFDdaEwxPGOtfy74ofQqsDAuzVYXNkY7B3OEA2uz_tjx0xkAwVG5nYn2VgR0erP" },
-  { id:"sun_ga_nm", name:"Sụn gà chiên nước mắm", category:"khai_vi", price:99000, description:"Giòn cay, nhắm bia cực cuốn", isBestSeller:true, marginLevel:"high", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuAMu8ADOhUJzlUZhGgHS0glI_XH-wxxal07IlrGM0wBBHOeG-j7sWwtUJQW-UImKgESyal8PqsL5Khn2J6Kn7yN9kjWF8vECi_tv1umEPrn-52a2r2ccAHS3oi-VXEwZhLqjffWqHlKnBf1PhSty7vSbf9BqW4InGIarxkIVP5ajtuDQ3tDmBpAnbl3uO54lBQL4vvC3uJFqRiVKfrcmcfUCpsF2SKrlhwOP6mr22CXIaY9DUkk74_CbD-EHjMKzg_z1hkiWiQrzq9Q" },
-  { id:"lau_thai_nho", name:"Lẩu Thái nhỏ", category:"lau", price:199000, description:"Chua cay đậm vị, phù hợp nhóm 3–4 người", isBestSeller:true, marginLevel:"medium", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuAHml6kws6weo9ICmUNytMU1fq_IwRqriKpoXkWINjUvijDPhqXHgPGIp9wgKLgXHCOfcBOBULCqFm5ZmK2CgEFde-BjO6E3oYpiV1oLqdSPuFy_iY29zgffGcg0ATAGYsBJ6dkVWlbGglm06z29SnVpOzNL4U_bWbYsDqaerlY-t5DLV78fqtk1A4r2S33sief-rbwEgBPq1WEFRgE31Wys7ZEG2x65Cc-ndGnTldfDuAVbfosh60D13_tNLod_f8XvOVGqjDCawK-" },
-  { id:"nuong_thap_cam", name:"Nướng thập cẩm", category:"nuong", price:299000, description:"Tổng hợp thịt & hải sản nướng", isBestSeller:true, marginLevel:"low", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuBf9VgvsfTgHOJ5bWUWIEkSWu_pBodfc9W4S7M_Wu5Vrdf9_HoNOTbPpfJTBjS6Yf78GiNC6KwIRtmjtaf-HD6vCFu3zQYcQapcxgLw8-pvMh3sTbS9XlXxZVpYWcKCO0xg7A7Xm6v0n5K2ZV5vzUQIlZPNvVZY5THmJI5LCqQPV2Kp3pE_hvQ8ruYNXJ1AxhLa_P5IMVtKTD-nWaS9hccwV6zzEa0crBCfwOvqqdsQBl5ZqqHwx6PoOUxAWfjAyO5eZEQHXrPR7sV_" },
-  { id:"khoai_tay_chien", name:"Khoai tây chiên", category:"khai_vi", price:39000, description:"Giòn, biên lợi nhuận cao", isBestSeller:false, marginLevel:"high", volumeLevel:"medium", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuArRcQQwHYJ_A_Rk6EeO1EUrGXgtiDuAG9jHNr2Hju-AevoBa0kSHFVtE8TMCf-PMXTCyeU2458foYrXRaBpZpaWWnIDvVkhPjNMhXdJXHCn7gM61sirVw2XFu6u1ydhPEPReoqPHWGpfYHmBmNR2CQAjS4Bjn2gpsBzXo22TGMoQU1OlhmGQrWTh8l47jt_mPMvgZCJl-lgG66t4ySb-sy_NiT6V4CUQ_wdRtHGVMS-AA7laYPrgQDw_sOCZ0vocSX4FFlg2LLx5Ik" },
-  { id:"ba_roi", name:"Ba rọi heo chiên giòn", category:"khai_vi", price:99000, description:"Giòn bì, béo vừa phải", isBestSeller:false, marginLevel:"high", volumeLevel:"medium", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuDN_VWn6-2g-TmPAPhyP_GiBE9z7kOn9rT1Dej01nu_J2KNs4CUn9cRcmvXXyk9jv99IMh5iJpsuhmW4b-C19wkfdij2sYLtyNQ8-zKZGrYn37ERuggFz5LVn32jNskbgvaGb1FtqrZuGmCWvB3TyGu1FfQmEv3zSdA98wgDXIAL8YRiJI_Cj1nBpxQFRvveKsPGUm3uQCYMdbFQxFDdaEwxPGOtfy74ofQqsDAuzVYXNkY7B3OEA2uz_tjx0xkAwVG5nYn2VgR0erP" },
-  { id:"rau_xao", name:"Rau xào thập cẩm", category:"mon_no", price:69000, description:"Thanh vị, dễ upsell combo", isBestSeller:false, marginLevel:"high", volumeLevel:"medium", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuArRcQQwHYJ_A_Rk6EeO1EUrGXgtiDuAG9jHNr2Hju-AevoBa0kSHFVtE8TMCf-PMXTCyeU2458foYrXRaBpZpaWWnIDvVkhPjNMhXdJXHCn7gM61sirVw2XFu6u1ydhPEPReoqPHWGpfYHmBmNR2CQAjS4Bjn2gpsBzXo22TGMoQU1OlhmGQrWTh8l47jt_mPMvgZCJl-lgG66t4ySb-sy_NiT6V4CUQ_wdRtHGVMS-AA7laYPrgQDw_sOCZ0vocSX4FFlg2LLx5Ik" },
-  { id:"suon_nuong", name:"Sườn nướng tảng", category:"nuong", price:189000, description:"Mềm, đậm sốt BBQ", isBestSeller:true, marginLevel:"medium", volumeLevel:"high", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuC_Yhhn4enArw1Wh2XiMw560dIpgzxrNdszcX6PGGUlKJ_hupoVQaX5TC-U0gtIPfIVKNclsv8WLsVUl_x_YZOz253DNnovcw2ulqDiVAKUIstx-ouChXWe-6Vt5ozHqGX4f7BQU3Zt5dAzpPNmL-mILNBtkxcLzAg2AhfgnmbNlH6cxE2GBhEfVnsKBM4exhSUyZK8nmPrqy7a4HWCW4w2SkKtL_RBBMGZOJGdGwZHXK154bpcrV7yiN1pedxqJzIRpoEP5zDHwXMz" },
-  { id:"xien_nuong", name:"Xiên nướng tổng hợp", category:"nuong", price:129000, description:"Phù hợp nhóm nhỏ", isBestSeller:false, marginLevel:"medium", volumeLevel:"medium", image:"https://lh3.googleusercontent.com/aida-public/AB6AXuAMu8ADOhUJzlUZhGgHS0glI_XH-wxxal07IlrGM0wBBHOeG-j7sWwtUJQW-UImKgESyal8PqsL5Khn2J6Kn7yN9kjWF8vECi_tv1umEPrn-52a2r2ccAHS3oi-VXEwZhLqjffWqHlKnBf1PhSty7vSbf9BqW4InGIarxkIVP5ajtuDQ3tDmBpAnbl3uO54lBQL4vvC3uJFqRiVKfrcmcfUCpsF2SKrlhwOP6mr22CXIaY9DUkk74_CbD-EHjMKzg_z1hkiWiQrzq9Q" }
-];
-
 const comboSets = [
   { id:"combo_4", name:"Combo 4 Người Best Seller", price:750000, groupSize:4, marginLevel:"medium" },
   { id:"combo_10", name:"Combo Tiệc 10 Người", price:1300000, groupSize:10, marginLevel:"medium" }
 ];
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
     function triggerGenerateLead(source, e, url) {
         if(e) e.preventDefault();
-        gtag('event', 'generate_lead', { lead_channel: source });
+        gtag('event', 'generate_lead', { source: source });
         if(url) {
             setTimeout(function() { window.open(url, '_blank'); }, 250);
         }
@@ -88,39 +75,37 @@ document.addEventListener("DOMContentLoaded", function () {
         
         if (isBestSellerBlock) {
             return `
-                <div class="group flex flex-col gap-3 bg-surface-white p-3 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-transparent hover:border-primary/20 menu-item-card cursor-pointer" data-id="${item.id}" data-name="${item.name}" data-category="${item.category}" data-price="${item.price}" data-margin="${item.marginLevel}">
+                <div class="group flex flex-col gap-3 bg-surface-white p-3 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border border-transparent hover:border-primary/20 menu-item-card cursor-pointer" data-id="${item.id}" data-name="${item.name}" data-category="${item.category}" data-price="${item.price}">
                     <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-gray-100">
                         ${bestSellerBadge}
-                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('${item.image || ''}');"></div>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('${item.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuArRcQQwHYJ_A_Rk6EeO1EUrGXgtiDuAG9jHNr2Hju-AevoBa0kSHFVtE8TMCf-PMXTCyeU2458foYrXRaBpZpaWWnIDvVkhPjNMhXdJXHCn7gM61sirVw2XFu6u1ydhPEPReoqPHWGpfYHmBmNR2CQAjS4Bjn2gpsBzXo22TGMoQU1OlhmGQrWTh8l47jt_mPMvgZCJl-lgG66t4ySb-sy_NiT6V4CUQ_wdRtHGVMS-AA7laYPrgQDw_sOCZ0vocSX4FFlg2LLx5Ik'}');"></div>
                     </div>
                     <div>
                         <p class="text-text-main text-base font-bold leading-tight group-hover:text-primary transition-colors">${item.name}</p>
-                        <p class="text-text-secondary text-xs mt-1 line-clamp-1">${item.description}</p>
                         <p class="text-primary text-sm font-bold mt-1">${formatPrice(item.price)}</p>
                     </div>
                 </div>
             `;
-        } else if (item.category === 'lau') {
+        } else if (item.category === 'mon_chinh' || item.category === 'nuong') {
             return `
-            <div class="col-span-2 md:col-span-2 group cursor-pointer bg-white p-3 rounded-xl border border-border-color menu-item-card" data-id="${item.id}" data-name="${item.name}" data-category="${item.category}" data-price="${item.price}" data-margin="${item.marginLevel}">
+            <div class="col-span-2 md:col-span-2 group cursor-pointer bg-white p-3 rounded-xl border border-border-color menu-item-card" data-id="${item.id}" data-name="${item.name}" data-category="${item.category}" data-price="${item.price}">
                 <div class="flex gap-4 items-center">
                     <div class="w-24 h-24 rounded-lg bg-gray-100 overflow-hidden shrink-0 relative">
                         ${bestSellerBadge}
-                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('${item.image || ''}');"></div>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('${item.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuAHml6kws6weo9ICmUNytMU1fq_IwRqriKpoXkWINjUvijDPhqXHgPGIp9wgKLgXHCOfcBOBULCqFm5ZmK2CgEFde-BjO6E3oYpiV1oLqdSPuFy_iY29zgffGcg0ATAGYsBJ6dkVWlbGglm06z29SnVpOzNL4U_bWbYsDqaerlY-t5DLV78fqtk1A4r2S33sief-rbwEgBPq1WEFRgE31Wys7ZEG2x65Cc-ndGnTldfDuAVbfosh60D13_tNLod_f8XvOVGqjDCawK-'}');"></div>
                     </div>
                     <div>
                         <h4 class="font-bold text-base group-hover:text-primary transition-colors">${item.name}</h4>
-                        <p class="text-text-secondary text-xs line-clamp-2 my-1">${item.description}</p>
                         <p class="text-accent text-sm font-bold">${formatPrice(item.price)}</p>
                     </div>
                 </div>
             </div>`;
         } else {
             return `
-            <div class="group cursor-pointer menu-item-card" data-id="${item.id}" data-name="${item.name}" data-category="${item.category}" data-price="${item.price}" data-margin="${item.marginLevel}">
+            <div class="group cursor-pointer menu-item-card" data-id="${item.id}" data-name="${item.name}" data-category="${item.category}" data-price="${item.price}">
                 <div class="w-full aspect-square rounded-xl bg-gray-100 overflow-hidden mb-2 relative">
                     ${bestSellerBadge}
-                    <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('${item.image || ''}');"></div>
+                    <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('${item.image || 'https://lh3.googleusercontent.com/aida-public/AB6AXuDN_VWn6-2g-TmPAPhyP_GiBE9z7kOn9rT1Dej01nu_J2KNs4CUn9cRcmvXXyk9jv99IMh5iJpsuhmW4b-C19wkfdij2sYLtyNQ8-zKZGrYn37ERuggFz5LVn32jNskbgvaGb1FtqrZuGmCWvB3TyGu1FfQmEv3zSdA98wgDXIAL8YRiJI_Cj1nBpxQFRvveKsPGUm3uQCYMdbFQxFDdaEwxPGOtfy74ofQqsDAuzVYXNkY7B3OEA2uz_tjx0xkAwVG5nYn2VgR0erP'}');"></div>
                 </div>
                 <h4 class="font-bold text-sm group-hover:text-primary transition-colors">${item.name}</h4>
                 <p class="text-accent text-sm font-bold">${formatPrice(item.price)}</p>
@@ -128,72 +113,79 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    const bestSellersContainer = document.getElementById('best-sellers-grid');
-    if (bestSellersContainer) {
-        bestSellersContainer.innerHTML = menuItems.filter(item => item.isBestSeller).map(item => createMenuCard(item, true)).join('');
-    }
+    try {
+        const response = await fetch('menu-data.json');
+        const menuItems = await response.json();
 
-    const categories = [
-        { id: 'khai-vi-grid', category: 'khai_vi' },
-        { id: 'nuong-grid', category: 'nuong' },
-        { id: 'lau-grid', category: 'lau' },
-        { id: 'hai-san-grid', category: 'hai_san' },
-        { id: 'mon-no-grid', category: 'mon_no' },
-        { id: 'do-uong-grid', category: 'do_uong' },
-    ];
-
-    categories.forEach(cat => {
-        const catContainer = document.getElementById(cat.id);
-        if (catContainer) {
-            catContainer.innerHTML = menuItems.filter(item => item.category === cat.category).map(item => createMenuCard(item)).join('');
+        const bestSellersContainer = document.getElementById('best-sellers-grid');
+        if (bestSellersContainer) {
+            bestSellersContainer.innerHTML = menuItems.filter(item => item.isBestSeller).map(item => createMenuCard(item, true)).join('');
         }
-    });
 
-    const bannerHtml = `
-        <div class="col-span-2 md:col-span-3 lg:col-span-3 mt-6 bg-accent/10 border border-accent/20 rounded-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 w-full cursor-pointer hover:bg-accent/20 transition-colors" id="combo-cta-banner">
-            <div>
-                <h4 class="font-bold text-accent text-lg">Gợi ý Combo 4 Người từ 750.000đ</h4>
-                <p class="text-text-secondary text-sm">Tiết kiệm hơn, đầy đủ món khai vị, nướng và lẩu.</p>
-            </div>
-            <button class="bg-accent text-white font-bold h-11 px-6 rounded-xl hover:bg-accent-light transition-colors shadow-md whitespace-nowrap">
-                Tư vấn Combo
-            </button>
-        </div>
-    `;
-    const bsGrid = document.getElementById('best-sellers-grid');
-    if(bsGrid) {
-        bsGrid.insertAdjacentHTML('afterend', bannerHtml);
-        document.getElementById('combo-cta-banner').addEventListener('click', function(e) {
-            triggerGenerateLead('menu_combo_banner', e, 'https://zalo.me/0975229739');
+        const categories = [
+            { id: 'an-nhe-grid', category: 'an_nhe' },
+            { id: 'khai-vi-grid', category: 'khai_vi' },
+            { id: 'lai-rai-grid', category: 'lai_rai' },
+            { id: 'nuong-grid', category: 'nuong' },
+            { id: 'mon-chinh-grid', category: 'mon_chinh' },
+            { id: 'bia-nuoc-ngot-grid', category: 'bia_nuoc_ngot' },
+            { id: 'do-uong-grid', category: 'do_uong' }
+        ];
+
+        categories.forEach(cat => {
+            const catContainer = document.getElementById(cat.id);
+            if (catContainer) {
+                catContainer.innerHTML = menuItems.filter(item => item.category === cat.category).map(item => createMenuCard(item)).join('');
+            }
         });
-    }
 
-    document.querySelectorAll('.menu-item-card').forEach(card => {
-        card.addEventListener('click', function() {
-            gtag('event', 'select_item', {
-                item_id: this.dataset.id,
-                item_name: this.dataset.name,
-                item_category: this.dataset.category,
-                price: parseFloat(this.dataset.price),
-                margin_level: this.dataset.margin
+        const bannerHtml = `
+            <div class="col-span-2 md:col-span-3 lg:col-span-3 mt-6 bg-accent/10 border border-accent/20 rounded-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 w-full cursor-pointer hover:bg-accent/20 transition-colors" id="combo-cta-banner">
+                <div>
+                    <h4 class="font-bold text-accent text-lg">Gợi ý Combo 4 Người từ 750.000đ</h4>
+                    <p class="text-text-secondary text-sm">Tiết kiệm hơn, đầy đủ món khai vị, nướng và lẩu.</p>
+                </div>
+                <button class="bg-accent text-white font-bold h-11 px-6 rounded-xl hover:bg-accent-light transition-colors shadow-md whitespace-nowrap">
+                    Tư vấn Combo
+                </button>
+            </div>
+        `;
+        const bsGrid = document.getElementById('best-sellers-grid');
+        if(bsGrid && !document.getElementById('combo-cta-banner')) {
+            bsGrid.insertAdjacentHTML('afterend', bannerHtml);
+            document.getElementById('combo-cta-banner').addEventListener('click', function(e) {
+                triggerGenerateLead('menu_page', e, 'https://zalo.me/0975229739');
+            });
+        }
+
+        document.querySelectorAll('.menu-item-card').forEach(card => {
+            card.addEventListener('click', function() {
+                gtag('event', 'select_item', {
+                    item_id: this.dataset.id,
+                    item_name: this.dataset.name,
+                    item_category: this.dataset.category,
+                    price: parseFloat(this.dataset.price)
+                });
             });
         });
-    });
+    } catch (error) {
+        console.error('Error fetching menu data:', error);
+    }
 
     // General Tracking Bindings
     document.querySelectorAll(".cta-zalo, a[href*='zalo.me']").forEach(function(el) {
         el.addEventListener("click", function(e) {
-            triggerGenerateLead('zalo', e, 'https://zalo.me/0975229739');
+            triggerGenerateLead('menu_page', e, 'https://zalo.me/0975229739');
         });
     });
-    document.querySelectorAll(".cta-call, a[href^='tel:']").forEach(function(el) {
+    document.querySelectorAll(".cta-call, a[href^='tel:'], button:contains('Đặt bàn')").forEach(function(el) {
         el.addEventListener("click", function(e) {
-            triggerGenerateLead('call', null, null); 
+            triggerGenerateLead('menu_page', null, null); 
         });
     });
     document.querySelectorAll("a[href*='facebook.com'], a[href*='m.me']").forEach(function(el) {
         el.addEventListener("click", function(e) {
-            triggerGenerateLead('messenger', e, el.getAttribute('href'));
+            triggerGenerateLead('menu_page', e, el.getAttribute('href'));
         });
     });
 });
@@ -286,57 +278,63 @@ document.addEventListener("DOMContentLoaded", function () {
 <a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#lau">
 <span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">LẨU</span>
 </a>
-<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#hai-san">
-<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">HẢI SẢN</span>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#an-nhe">
+<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">ĂN NHẸ</span>
 </a>
-<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#mon-no">
-<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">MÓN NO</span>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#lai-rai">
+<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">LAI RAI</span>
 </a>
-<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#do-uong">
-<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">ĐỒ UỐNG</span>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent py-4 hover:border-b-accent/50 transition-all" href="#mon-chinh">
+<span class="text-text-secondary text-sm font-bold tracking-wide group-hover:text-accent transition-colors">MÓN CHÍNH</span>
 </a>
 </div>
 </div>
 </div>
 </div>
 <div class="w-full max-w-[960px] px-4 md:px-10 lg:px-40 flex flex-col gap-16 py-10">
+
 <section class="scroll-mt-32" id="best-sellers">
 <div class="flex items-center justify-between pb-6 pt-2">
 <h2 class="text-text-main text-2xl font-bold flex items-center gap-2">
 <span class="material-symbols-outlined text-accent">verified</span>
-                            Top 6 Món Best-Seller
+                            Top Món Best-Seller
                         </h2>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6" id="best-sellers-grid">
 </div>
 </section>
+<section class="scroll-mt-32" id="an-nhe">
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Ăn Nhẹ</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="an-nhe-grid">
+</div>
+</section>
 <section class="scroll-mt-32" id="khai-vi">
-<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Khai Vị &amp; Lai Rai</h3>
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Khai Vị</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="khai-vi-grid">
 </div>
 </section>
+<section class="scroll-mt-32" id="lai-rai">
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Lai Rai</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="lai-rai-grid">
+</div>
+</section>
 <section class="scroll-mt-32" id="nuong">
-<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Món Nướng Than Hoa</h3>
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Món Nướng</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="nuong-grid">
 </div>
 </section>
-<section class="scroll-mt-32" id="lau">
-<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Lẩu &amp; Món Nước</h3>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="lau-grid">
+<section class="scroll-mt-32" id="mon-chinh">
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Món Chính</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="mon-chinh-grid">
 </div>
 </section>
-<section class="scroll-mt-32" id="hai-san">
-<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Hải Sản</h3>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="hai-san-grid">
-</div>
-</section>
-<section class="scroll-mt-32" id="mon-no">
-<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Món No &amp; Cơm Mì</h3>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="mon-no-grid">
+<section class="scroll-mt-32" id="bia-nuoc-ngot">
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Bia - Nước Ngọt</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="bia-nuoc-ngot-grid">
 </div>
 </section>
 <section class="scroll-mt-32" id="do-uong">
-<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Đồ Uống &amp; Beer</h3>
+<h3 class="text-xl font-bold border-l-4 border-primary pl-4 mb-6">Đồ Uống Khác</h3>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="do-uong-grid">
 </div>
 </section>
