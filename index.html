@@ -3,6 +3,23 @@
 
 <head>
   <meta charset="utf-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <meta name="theme-color" content="#000000">
+  <style>
+    .site-logo {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+      .site-logo {
+        height: 32px;
+      }
+    }
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ✅ SEO cơ bản (giữ từ web cũ) -->
@@ -158,13 +175,7 @@
       <div class="px-4 lg:px-40 flex justify-center">
         <div class="flex items-center justify-between w-full max-w-[1280px] h-16 lg:h-20">
           <a href="#top" class="flex items-center gap-3 lg:gap-4">
-            <div
-              class="size-10 flex items-center justify-center rounded-full bg-secondary/30 text-primary border border-primary/20">
-              <span class="material-symbols-outlined text-2xl">yard</span>
-            </div>
-            <h2 class="text-content text-xl lg:text-2xl font-serif font-bold leading-tight tracking-wide">
-              XOX <span class="text-primary italic">Beer Garden</span>
-            </h2>
+            <img src="/logo.png" alt="XOX Beer Garden Logo" class="site-logo">
           </a>
 
           <nav class="hidden lg:flex flex-1 justify-end gap-8 items-center">

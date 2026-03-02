@@ -3,6 +3,23 @@
 
 <head>
     <meta charset="utf-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <meta name="theme-color" content="#000000">
+    <style>
+        .site-logo {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .site-logo {
+                height: 32px;
+            }
+        }
+    </style>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>XOX Beer Garden - Menu</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -268,11 +285,7 @@
                     <div class="layout-content-container flex flex-col w-full max-w-[960px] flex-1">
                         <div class="flex items-center justify-between whitespace-nowrap">
                             <div class="flex items-center gap-3 text-primary">
-                                <div class="size-8 flex items-center justify-center rounded-full bg-primary/10">
-                                    <span class="material-symbols-outlined text-2xl">local_bar</span>
-                                </div>
-                                <h2 class="text-primary text-xl font-bold leading-tight tracking-tight">XOX Beer Garden
-                                </h2>
+                                <img src="/logo.png" alt="XOX Beer Garden Logo" class="site-logo">
                             </div>
                             <div class="hidden md:flex flex-1 justify-end gap-8 items-center">
                                 <div class="flex items-center gap-6">
